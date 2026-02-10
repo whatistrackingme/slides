@@ -28,12 +28,27 @@ The dev server runs automatically via PM2 in the devcontainer:
 
 ### Creating Content
 
-Use the `/slide-builder` skill to interactively create and refine slides. The skill:
-- Reviews the presentation structure
-- Suggests new slides based on the topic
-- Refines existing content
-- Generates images with AI when needed
-- Maintains consistent flow and pacing
+Use the `/slide-builder` skill to interactively create and refine slides. The skill implements research-backed principles:
+
+**Research-Based Design:**
+- One meaningful image per slide (full-screen, high-resolution)
+- Maximum 6 words text per slide (TED standard)
+- Assertion-evidence format (one claim + one visual)
+- 10-12 slides total for 20-minute delivery
+- Story arc: Problem → Struggle → Solution
+
+**What the skill does:**
+- Reviews current structure and identifies gaps
+- Creates slides following cognitive science principles
+- Generates images that directly support learning
+- Ensures every slide has a meaningful visual
+- Maintains story flow and optimal pacing
+- Applies findings from TED talks and technical presentation research
+
+**Key stats:**
+- Well-designed visuals reduce learning time by 40%
+- Stories are 22x more memorable than facts alone
+- Pictures increase understanding in 98% of experiments
 
 ### Image Generation
 
@@ -60,13 +75,17 @@ The presentation is about the [WhatIsTrackingMe POC](https://github.com/whatistr
 Technical audience interested in privacy, security, and digital identity.
 
 ### Duration
-20 minutes total:
-- Introduction: 2-3 minutes
-- Problem statement: 3-4 minutes
-- Solution overview: 5-6 minutes
-- Technical details: 6-7 minutes
-- Demo/Examples: 2-3 minutes
-- Q&A: 2-3 minutes
+20 minutes total (10-12 slides following 10-20-30 rule):
+- Hook: 2 minutes
+- Privacy Gap: 2 minutes
+- The Journey: 1.5 minutes
+- Solution Intro: 1.5 minutes
+- Technical Architecture: 4 minutes (3 slides)
+- Live Demo/Case Study: 3 minutes
+- What We Learned: 2 minutes
+- Bigger Picture: 2 minutes
+- Call to Action: 2 minutes
+- Q&A Buffer: 2-3 minutes
 
 ### Tone
 - Educational and thought-provoking
