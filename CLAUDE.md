@@ -1,171 +1,99 @@
-# Claude Code Notes - Slidev/Vite Devcontainer Setup
+# Claude Code Notes - WhatIsTrackingMe Slides
 
-## Lessons Learned: Running Vite Dev Server in Docker
+## Project Overview
 
-### The Challenge
+This is a Slidev presentation about the WhatIsTrackingMe privacy awareness project. The presentation is designed to be given in 20 minutes and explains how the project helps people understand digital tracking of their real-world presence.
 
-Vite dev servers (including Slidev) bind to `127.0.0.1` by default for security, which causes issues when accessed through:
-- Docker port forwarding
-- Remote development environments (Coder, Codespaces, etc.)
-- Proxy services with custom hostnames
+## Repository Structure
 
-### The Solution
-
-#### 1. Use the `--remote` Flag (Slidev-specific)
-
-For Slidev, the `--remote` flag enables public host listening:
-
-```json
-{
-  "scripts": {
-    "dev": "slidev --remote"
-  }
-}
+```
+slides/
+├── slides.md                      # Main presentation content
+├── .devcontainer/                 # Auto-starts PM2 dev server
+├── .claude/skills/
+│   └── generate-slide-image/      # AI image generation (Nano Banana Pro)
+├── public/images/                 # Generated and static images
+├── docs/                          # Technical documentation
+└── README.md                      # Contributor guide
 ```
 
-This is cleaner than `--host 0.0.0.0` and enables remote control features.
+## Working with Slides
 
-#### 2. Configure Allowed Hosts
+### Development Server
 
-Vite blocks requests from unknown hosts by default. Configure via `vite.config.ts`:
+The dev server runs automatically via PM2 in the devcontainer:
+- **URL:** http://localhost:3030
+- **HMR:** Changes to `slides.md` appear instantly
+- **Commands:** `npm run dev:logs`, `npm run dev:stop`, `npm run dev:pm2`
 
-```typescript
-import { defineConfig } from 'vite'
+### Creating Content
 
-const allowedHost = process.env.VITE_ALLOWED_HOST
+Use the `/slide-builder` skill to interactively create and refine slides. The skill:
+- Reviews the presentation structure
+- Suggests new slides based on the topic
+- Refines existing content
+- Generates images with AI when needed
+- Maintains consistent flow and pacing
 
-export default defineConfig({
-  server: {
-    host: '0.0.0.0',
-    port: 3030,
-    strictPort: true,
-    allowedHosts: allowedHost ? [allowedHost] : []
-  }
-})
-```
+### Image Generation
 
-#### 3. Environment Variable Setup
-
-**Structure:**
-- `.env` - API keys, shared secrets (gitignored)
-- `.env.local` - Environment-specific config like hostnames (gitignored)
-- `example.env` & `example.env.local` - Templates for setup
-
-**Example `.env.local`:**
+Generate images using the Nano Banana Pro skill:
 ```bash
-VITE_ALLOWED_HOST=your-proxy-hostname-here
+/generate-slide-image "your prompt here"
 ```
 
-Vite automatically loads `.env.local` files - no additional configuration needed.
+Images are saved to `public/images/` and ready to use in slides.
 
-#### 4. Process Management with PM2
+## Related Project
 
-Dev servers exit when backgrounded in containers. Use PM2:
+The presentation is about the [WhatIsTrackingMe POC](https://github.com/whatistrackingme/poc) - a privacy awareness tool where users wear QR codes to track how their real-world presence is captured digitally.
 
-```json
-{
-  "scripts": {
-    "dev": "slidev --remote",
-    "dev:pm2": "pm2 start npm --name slidev -- run dev",
-    "dev:stop": "pm2 stop slidev",
-    "dev:logs": "pm2 logs slidev"
-  }
-}
-```
+**Key concepts to cover:**
+- Real-world to digital boundary crossing
+- QR code tracking methodology
+- Privacy awareness through self-surveillance
+- Technical architecture (client, broadcaster, collector, backend)
 
-**Devcontainer auto-start:**
-```json
-{
-  "postStartCommand": "npm run dev:pm2"
-}
-```
+## Presentation Guidelines
 
-#### 5. Docker Configuration
+### Target Audience
+Technical audience interested in privacy, security, and digital identity.
 
-**Disable IPv6** to force IPv4 binding:
-```json
-{
-  "runArgs": [
-    "-p", "3030:3030",
-    "--sysctl", "net.ipv6.conf.all.disable_ipv6=1"
-  ]
-}
-```
+### Duration
+20 minutes total:
+- Introduction: 2-3 minutes
+- Problem statement: 3-4 minutes
+- Solution overview: 5-6 minutes
+- Technical details: 6-7 minutes
+- Demo/Examples: 2-3 minutes
+- Q&A: 2-3 minutes
 
-**Port mapping:**
-```json
-{
-  "forwardPorts": [3030],
-  "portsAttributes": {
-    "3030": {
-      "label": "Slidev",
-      "onAutoForward": "notify"
-    }
-  }
-}
-```
+### Tone
+- Educational and thought-provoking
+- Balance between technical detail and accessibility
+- Emphasize privacy implications
+- Show real-world applications
 
-### Common Errors and Solutions
+## Environment Files
 
-#### Error: "Connection reset by peer"
-**Cause:** Vite binding to 127.0.0.1, Docker port forwarding not working
-**Solution:** Use `--remote` flag or `--host 0.0.0.0`
+- `.env` - Gemini API key for image generation
+- `.env.local` - Allowed hosts for Vite (Coder/Codespaces URLs)
+- `example.env` & `example.env.local` - Templates for contributors
 
-#### Error: "This host is not allowed"
-**Cause:** Vite's allowedHosts security check
-**Solution:** Add hostname to `server.allowedHosts` in vite.config.ts via environment variable
+See `docs/devcontainer-setup.md` for technical setup details.
 
-#### Error: Dev server exits immediately
-**Cause:** Background processes in containers without proper daemonization
-**Solution:** Use PM2 to manage the process
+## Skills Available
 
-### File Structure
+- **generate-slide-image** - Generate images using Gemini Imagen (Nano Banana Pro)
+- **slide-builder** - Interactive slide creation and refinement workflow
 
-```
-project/
-├── .devcontainer/
-│   └── devcontainer.json          # PM2 auto-start, port mapping, IPv6 disabled
-├── .env                           # API keys (gitignored)
-├── .env.local                     # Allowed hosts (gitignored)
-├── example.env                    # Template for .env
-├── example.env.local              # Template for .env.local
-├── vite.config.ts                 # Server config with allowed hosts
-├── package.json                   # PM2 scripts
-└── CLAUDE.md                      # This file
-```
+## Git Workflow
 
-### Quick Start for New Environments
-
-1. Copy `example.env.local` to `.env.local`
-2. Add your proxy hostname to `VITE_ALLOWED_HOST`
-3. Start devcontainer - PM2 auto-starts the server
-4. Access via your proxy URL
-
-### Testing
-
+Standard workflow with gh CLI authentication:
 ```bash
-# Inside container
-curl http://localhost:3030
-
-# From host
-curl http://localhost:3030
-
-# Via proxy (replace with your hostname)
-curl http://your-proxy-hostname:3030
+git add .
+git commit -m "Your message"
+git push
 ```
 
-### Key Takeaways
-
-1. **Always use `--remote` or `--host 0.0.0.0`** for containerized Vite servers
-2. **Use PM2** for persistent background processes in containers
-3. **Configure `allowedHosts`** for proxy/remote access
-4. **Disable IPv6** in containers to avoid binding confusion
-5. **Use `.env.local`** for environment-specific configuration
-6. **Provide example files** so others can set up easily
-
-### Related Issues
-
-- Vite security features can block legitimate proxy access
-- Docker port forwarding doesn't work when services bind to 127.0.0.1 only
-- Background Node processes exit in containers without proper daemonization
-- IPv6 binding can cause connectivity issues in mixed environments
+PAT is already configured - no additional auth needed.
