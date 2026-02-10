@@ -32,5 +32,8 @@
     "pm2": "^6.0.14",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@fontsource-variable/space-grotesk": "^5.2.10"
   }
 }
