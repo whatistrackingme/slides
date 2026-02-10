@@ -79,22 +79,7 @@ The presentation is about the [WhatIsTrackingMe POC](https://github.com/whatistr
 Technical audience interested in privacy, security, and digital identity.
 
 ### Duration
-20 minutes total (14-16 slides):
-- Hook: 1.5 minutes
-- Current State (AI, tracking): 1.5 minutes
-- Privacy Gap: 1.5 minutes
-- Solution Intro: 1 minute
-- Hardware + Software (3D printing + Tauri): 1.5 minutes
-- How It Works: 1.5 minutes
-- Backend Architecture: 1.5 minutes
-- Frontend (Tauri): 1.5 minutes
-- Hardware (3D printing): 1.5 minutes
-- Use Cases: 2 minutes
-- Live Demo: 2 minutes
-- What We Discovered: 1.5 minutes
-- Bigger Picture: 1.5 minutes
-- Call to Action: 1.5 minutes
-- Q&A Buffer: 2-3 minutes
+20 minutes total (14-16 slides) with 2-3 minutes Q&A buffer. The slide order and structure are defined in `slides.md` — refer to that file for the current presentation flow.
 
 ### Tone
 - Educational and thought-provoking

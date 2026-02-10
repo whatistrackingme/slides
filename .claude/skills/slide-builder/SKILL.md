@@ -27,93 +27,24 @@ This skill implements findings from TED talks, cognitive science, and technical 
 - **Well-designed visuals reduce learning time by 40%**
 - **Audience attention maxes out at 20 minutes**
 
-## Presentation Structure (14-16 slides, 20 minutes)
+## Presentation Structure
 
-### Slide 1: The Hook (1.5 min)
-**Image:** Person scanning QR code at coffee shop/event
-**Purpose:** Set up invisible-to-visible transformation
-**Question:** "What just happened?"
+**Duration:** 20 minutes total (14-16 slides) with 2-3 minutes Q&A buffer.
 
-### Slide 2: Current State of Affairs (1.5 min)
-**Image:** Collage showing AI surveillance, tracking tech, QR codes everywhere
-**Context:** AI-powered tracking, ubiquitous QR codes, surveillance capitalism
-**Reality:** "In 2024, every physical interaction is potentially digital data"
+**Source of truth:** The current slide order and structure are defined in `slides.md`. Always read that file first to understand the current flow before making changes.
 
-### Slide 3: The Privacy Gap (1.5 min)
-**Image:** Physical space overlaid with invisible digital signals
-**Assertion:** We understand physical privacy but ignore digital tracking
-**Emotional hook:** This gap puts us at risk
+### Timing Guidelines Per Slide Type
+- Simple concept slide: 1.5 minutes
+- Technical detail slide: 2 minutes
+- Demo/interactive slide: 3 minutes
 
-### Slide 4: Meet WhatIsTrackingMe (1 min)
-**Image:** Tool concept - physical wearable QR code + digital interface
-**Core idea:** Making invisible tracking visible through self-surveillance
-**Resolution begins:** "Wear the tracker, see who tracks you"
-
-### Slide 5: Hardware + Software (1.5 min)
-**Image:** 3D printed badge/wearable with QR code + phone showing app
-**Physical component:** 3D-printed wearables with unique QR codes
-**Digital component:** Tauri-based frontend app for real-time tracking visibility
-**Integration:** Hardware you wear, software you control
-
-### Slide 6: How It Works - The Flow (1.5 min)
-**Image:** Flow diagram: You wear QR → Someone scans → You get notified
-**Simple overview:** End-to-end user experience
-**Key point:** You see every interaction in real-time
-
-### Slides 7-9: Technical Architecture (4.5 min total)
-**Each slide = one system component:**
-
-**Slide 7: Backend Architecture (1.5 min)**
-- Image: Rust backend + PostgreSQL + file watcher architecture diagram
-- Key: Privacy-preserving design, encrypted data, user-owned keys
-- Tech: Axum, Ed25519 auth, proof-of-work challenges
-
-**Slide 8: Frontend - Tauri App (1.5 min)**
-- Image: Tauri app interface showing interaction tracking
-- Cross-platform: Desktop app with web technologies
-- Privacy: Data decryption happens client-side only
-
-**Slide 9: Hardware - 3D Printing (1.5 min)**
-- Image: E-ink display (Inkplate) showing rotating QR codes
-- Customizable: 3D print your own wearable
-- Dynamic: QR codes refresh with encrypted timestamps
-
-### Slide 10: Use Cases (2 min)
-**Image:** Grid showing different applications
-**Applications:**
-- **Business ranking** - Which venues track most aggressively
-- **Virality tracking** - How QR codes spread through social networks
-- **Privacy auditing** - Compliance verification for organizations
-- **Research tool** - Academic studies on real-world tracking
-- **Event security** - Conference/venue tracking transparency
-- **Personal dashboard** - Your digital footprint visualization
-- **Supply chain visibility** - Track product QR code interactions
-
-### Slide 11: Live Demo (2 min)
-**Image:** Real example or live demonstration screenshot
-**Interactive:** Walk through actual tracking revelation
-**"Aha" moment:** Show what the tool reveals in real-time
-
-### Slide 12: What We Discovered (1.5 min)
-**Image:** Data visualization of tracking patterns
-**Insights:** Specific findings from real-world usage
-**Surprising:** Tracking happens more than people think
-
-### Slide 13: The Bigger Picture (1.5 min)
-**Image:** Metaphor for privacy awareness (light illuminating hidden connections)
-**Implications:** Rethinking consent in physical spaces
-**Provocation:** "Should scanning be visible like photography?"
-
-### Slide 14: Call to Action (1.5 min)
-**Image:** Open source contribution graphic / project roadmap
-**Actionable:**
-- Try the tool: Wear a QR, see what happens
-- Contribute: Hardware designs, code, privacy research
-- Spread awareness: Make tracking visible
-
-### Slide 15: Questions (Buffer)
-**Image:** Project info with QR code to repo
-**Contact:** GitHub, contribution guide, discussion forum
+### Narrative Approach
+The presentation follows a **top-down** structure:
+1. **Hook & Context** — Grab attention, establish the problem
+2. **Solution Overview** — Introduce WhatIsTrackingMe and how it works at a high level
+3. **Use Cases & Demo** — Show why it matters and see it in action
+4. **Technical Deep-Dive** — Drill into backend, frontend, and hardware details
+5. **Insights & Closing** — What we discovered, bigger picture, call to action
 
 ## Interactive Workflow
 
@@ -326,9 +257,9 @@ Avoid:
 ## Technical Storytelling Strategy
 
 **Problem-Struggle-Solution Arc:**
-1. **Problem (Slides 1-2):** Invisible tracking, privacy gap
-2. **Struggle (Slide 3):** Journey from physical to digital without awareness
-3. **Solution (Slides 4-11):** WhatIsTrackingMe makes it visible
+1. **Problem:** Invisible tracking, privacy gap
+2. **Struggle:** Journey from physical to digital without awareness
+3. **Solution:** WhatIsTrackingMe makes it visible
 
 **Emotional Connection:**
 - Use first person: "When you scan..."
