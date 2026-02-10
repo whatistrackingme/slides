@@ -64,10 +64,14 @@ Images are saved to `public/images/` and ready to use in slides.
 The presentation is about the [WhatIsTrackingMe POC](https://github.com/whatistrackingme/poc) - a privacy awareness tool where users wear QR codes to track how their real-world presence is captured digitally.
 
 **Key concepts to cover:**
+- Current state: AI-powered tracking, surveillance capitalism
 - Real-world to digital boundary crossing
 - QR code tracking methodology
+- Hardware: 3D-printed wearables, e-ink displays (Inkplate)
+- Software: Tauri frontend, Rust backend (Axum + PostgreSQL)
+- Privacy-preserving architecture (Ed25519, client-side decryption)
+- Use cases: business ranking, virality tracking, auditing, research, personal dashboards
 - Privacy awareness through self-surveillance
-- Technical architecture (client, broadcaster, collector, backend)
 
 ## Presentation Guidelines
 
@@ -75,16 +79,21 @@ The presentation is about the [WhatIsTrackingMe POC](https://github.com/whatistr
 Technical audience interested in privacy, security, and digital identity.
 
 ### Duration
-20 minutes total (10-12 slides following 10-20-30 rule):
-- Hook: 2 minutes
-- Privacy Gap: 2 minutes
-- The Journey: 1.5 minutes
-- Solution Intro: 1.5 minutes
-- Technical Architecture: 4 minutes (3 slides)
-- Live Demo/Case Study: 3 minutes
-- What We Learned: 2 minutes
-- Bigger Picture: 2 minutes
-- Call to Action: 2 minutes
+20 minutes total (14-16 slides):
+- Hook: 1.5 minutes
+- Current State (AI, tracking): 1.5 minutes
+- Privacy Gap: 1.5 minutes
+- Solution Intro: 1 minute
+- Hardware + Software (3D printing + Tauri): 1.5 minutes
+- How It Works: 1.5 minutes
+- Backend Architecture: 1.5 minutes
+- Frontend (Tauri): 1.5 minutes
+- Hardware (3D printing): 1.5 minutes
+- Use Cases: 2 minutes
+- Live Demo: 2 minutes
+- What We Discovered: 1.5 minutes
+- Bigger Picture: 1.5 minutes
+- Call to Action: 1.5 minutes
 - Q&A Buffer: 2-3 minutes
 
 ### Tone
