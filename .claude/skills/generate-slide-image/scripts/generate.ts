@@ -52,7 +52,11 @@ async function generateImage(prompt: string): Promise<GenerateResult> {
       return { error: 'GEMINI_API_KEY not found in .env file' };
     }
 
-    console.error(`Generating image with prompt: ${prompt}`);
+    // Enforce consistent style constraints
+    const stylePrefix = 'Single continuous scene, one unified viewpoint, no text or labels or words anywhere in the image, no split screens or grids or multiple panels. Dark moody cinematic lighting, photorealistic, 16:9 aspect ratio. ';
+    const fullPrompt = stylePrefix + prompt;
+
+    console.error(`Generating image with prompt: ${fullPrompt}`);
     console.error(`API Key loaded: ${apiKey.substring(0, 10)}...`);
 
     // Use Nano Banana Pro (Gemini 3 Pro Image Preview)
@@ -68,7 +72,7 @@ async function generateImage(prompt: string): Promise<GenerateResult> {
       body: JSON.stringify({
         contents: [{
           parts: [{
-            text: prompt
+            text: fullPrompt
           }]
         }],
         generationConfig: {
