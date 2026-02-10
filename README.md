@@ -6,7 +6,7 @@ A 20-minute presentation about the WhatIsTrackingMe privacy awareness project, b
 
 ### Prerequisites
 
-- [VS Code](https://code.visualstudio.com/) with [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+- A [devcontainer](https://containers.dev/)-compatible environment (e.g. VS Code, JetBrains, Coder, GitHub Codespaces, or the [CLI](https://github.com/devcontainers/cli))
 - Docker
 - Gemini API key (for generating images)
 
@@ -29,14 +29,13 @@ A 20-minute presentation about the WhatIsTrackingMe privacy awareness project, b
    GEMINI_API_KEY=your_api_key_here
    ```
 
-4. **Add your Coder hostname to `.env.local`** (if using remote environment):
+4. **Add your hostname to `.env.local`** (if using a remote environment):
    ```bash
    VITE_ALLOWED_HOST=your-hostname-here
    ```
 
-5. **Open in VS Code Dev Container:**
-   - Open the folder in VS Code
-   - Click "Reopen in Container" when prompted
+5. **Open in a devcontainer:**
+   - Open the folder in your preferred devcontainer environment
    - Wait for the container to build and start
 
 The dev server will automatically start via PM2 when the container launches.
@@ -102,24 +101,33 @@ Content goes here
 
 See the [Slidev documentation](https://sli.dev/guide/) for more features.
 
-## Development Commands
+## Development
+
+The dev server starts automatically via PM2 when the devcontainer launches.
 
 ```bash
-# View dev server status
-npm run dev:status
-
-# View dev server logs
-npm run dev:logs
-
-# Restart dev server
-npm run dev:stop && npm run dev:pm2
-
-# Build for production
-npm run build
-
-# Export to PDF
-npm run export
+npm run dev:logs              # View dev server logs
+npm run dev:stop && npm run dev:pm2   # Restart dev server
+npm run export                # Export to PDF
 ```
+
+## Deployment
+
+The presentation is deployed to **GitHub Pages** automatically on push to `main` via a [GitHub Actions workflow](.github/workflows/deploy.yml).
+
+**Live URL:** https://whatistrackingme.github.io/slides/
+
+To test the production build locally:
+
+```bash
+npm run build        # Output in dist/
+```
+
+> **Note:** The production build uses `/slides/` as the base path for GitHub Pages. The dev server uses `/`.
+
+### GitHub Pages setup
+
+In the repo settings, set **Pages > Source** to **"GitHub Actions"**.
 
 ## Project Structure
 
@@ -187,4 +195,4 @@ npm run dev:stop && npm run dev:pm2
 
 ## License
 
-[Add license information]
+MIT
