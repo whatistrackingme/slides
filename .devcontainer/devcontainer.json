@@ -1,0 +1,27 @@
+{
+  "name": "Slidev Presentation",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  "features": {},
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "antfu.slidev"
+      ]
+    }
+  },
+  "postCreateCommand": "npm install",
+  "postStartCommand": "bash -c 'export $(cat .env | xargs) && npm run dev:pm2'",
+  "forwardPorts": [3030],
+  "portsAttributes": {
+    "3030": {
+      "label": "Slidev",
+      "onAutoForward": "notify"
+    }
+  },
+  "runArgs": [
+    "-p",
+    "3030:3030",
+    "--sysctl",
+    "net.ipv6.conf.all.disable_ipv6=1"
+  ]
+}

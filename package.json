@@ -1,0 +1,36 @@
+{
+  "name": "slides",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "slidev --remote",
+    "dev:pm2": "pm2 start npm --name slidev -- run dev",
+    "dev:stop": "pm2 stop slidev",
+    "dev:logs": "pm2 logs slidev",
+    "build": "slidev build",
+    "export": "slidev export"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whatistrackingme/slides.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/whatistrackingme/slides/issues"
+  },
+  "homepage": "https://github.com/whatistrackingme/slides#readme",
+  "devDependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@slidev/cli": "^52.11.5",
+    "@slidev/theme-default": "^0.25.0",
+    "@types/node": "^25.2.2",
+    "dotenv": "^17.2.4",
+    "pm2": "^6.0.14",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}

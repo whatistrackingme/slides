@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.slidev/
+.env
+.env.local
+*.env
