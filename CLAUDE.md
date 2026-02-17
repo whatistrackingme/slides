@@ -93,6 +93,15 @@ Technical audience interested in privacy, security, and digital identity.
 - `.env.local` - Allowed hosts for Vite (Coder/Codespaces URLs)
 - `example.env` & `example.env.local` - Templates for contributors
 
+**IMPORTANT:** Never commit actual hostnames or secrets into `.env.local` or `.env`. These files are gitignored. Only commit the `example.env` and `example.env.local` templates with placeholder values.
+
+**Known issue — "Blocked request" / allowedHosts:**
+Vite loads `.env.local` *after* `vite.config.ts` is evaluated, so `VITE_ALLOWED_HOST` is undefined when the config runs. The fix is to export the env var into the shell *before* starting the dev server:
+```bash
+VITE_ALLOWED_HOST="your-host-here" npx pm2 start "npx slidev --remote" --name slidev
+```
+The devcontainer usually handles this automatically, but if starting PM2 manually, the var must be passed explicitly.
+
 See `docs/devcontainer-setup.md` for technical setup details.
 
 ## Skills Available

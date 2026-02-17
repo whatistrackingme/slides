@@ -174,6 +174,25 @@ This is the moment that changes people's perspective. You did something complete
 
 ---
 layout: cover
+background: /images/generated_2026-02-17T12-45-26_clean_minimal_system_architecture_diagram_on_dark_.png
+---
+
+<div class="slide-label">
+  <p>How the pieces connect</p>
+</div>
+
+<!--
+Before we dive into the details, let me show you the big picture.
+
+On the left — the e-ink badge. It broadcasts your encrypted QR code. In the center — the Rust Axum server. It receives scan events, stores encrypted blobs in PostgreSQL, and routes notifications. On the right — the Tauri app on your device. It polls for new scans and decrypts everything locally.
+
+The key insight: data flows left to right, but decryption only happens on the far right — on your device. The server in the middle is deliberately blind. It stores data it cannot read.
+
+This is privacy by architecture. Not by policy, not by promise — by math.
+-->
+
+---
+layout: cover
 background: /images/generated_2026-02-10T08-57-00_a_sequence_diagram_showing_the_flow_between_four_e.png
 ---
 
@@ -227,6 +246,29 @@ Everything is open hardware. The STL files are on GitHub. You can literally prin
 
 ---
 layout: cover
+background: /images/generated_2026-02-17T12-56-51_four_3d_printing_filament_samples_side_by_side_on_.png
+---
+
+<div class="slide-label">
+  <p>Choosing the right material</p>
+</div>
+
+<!--
+Not all 3D printing filaments are equal — and for wearables, material choice matters.
+
+PLA — polylactic acid — is the easiest to print. It's plant-based, biodegradable, and great for prototyping. But it's brittle and softens at just 60°C, so it won't survive a hot car or direct sun.
+
+PETG — polyethylene terephthalate glycol — is the workhorse. It's the same family as water bottles. Better heat resistance, some flex, and it handles UV exposure reasonably well. Most of our badges use PETG.
+
+ASA — acrylonitrile styrene acrylate — is the outdoor champion. UV-stable, heat-resistant to 100°C, and tough. If your tracker lives outside on a backpack or bike, ASA is the answer. Harder to print though — needs an enclosure and good ventilation because of fumes.
+
+TPU — thermoplastic polyurethane — is the flexible one. Rubber-like, perfect for wristbands and clips that need to bend without snapping. Trickiest to print because it's elastic, but essential for body-worn form factors.
+
+Each material is a tradeoff: ease of printing versus durability, rigidity versus flex, indoor versus outdoor. We publish recommended settings for all four.
+-->
+
+---
+layout: cover
 background: /images/generated_2026-02-10T08-42-02_data_visualization_showing_unexpectedly_high_numbe.png
 ---
 
@@ -259,6 +301,25 @@ But when someone scans a QR code near you, or a system logs your presence — it
 Physical spaces are becoming digital fishbowls. Should scanning require the same visibility as photography? Should you have the right to know when you're being digitally observed?
 
 Privacy awareness is the first step toward privacy rights. And you can't be aware of what you can't see.
+-->
+
+---
+layout: cover
+background: /images/generated_2026-02-17T12-46-14_futuristic_privacy_technology_concept_on_dark_back.png
+---
+
+<div class="slide-label">
+  <p>What comes next</p>
+</div>
+
+<!--
+So where is this headed?
+
+We're working on mobile apps — native iOS and Android — so you don't need a desktop to monitor your tracking. AI-powered scan detection that can identify when cameras and automated systems read your QR code, not just phones.
+
+We're exploring NFC and Bluetooth beacons alongside QR codes. Smart glasses integration. Cross-platform tracking correlation — connecting the dots between different tracking systems that observe you.
+
+The vision is a full privacy awareness layer for your physical life. Open source, user-owned, always transparent.
 -->
 
 ---
