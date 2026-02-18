@@ -40,10 +40,6 @@ Look at this city. QR codes on every billboard, every storefront, every phone. W
 
 ---
 
-<div class="slide-label z-10">
-  <p>Scan this</p>
-</div>
-
 <iframe src="https://app.staging.whatistracking.me/qr" class="absolute inset-0 w-full h-full border-none" allow="camera" />
 
 <!--
