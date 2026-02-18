@@ -182,9 +182,9 @@ Event organizers could offer tracking transparency to attendees. The use cases k
 
 ---
 
-<div class="slide-label z-10">
-  <p>See it live</p>
-</div>
+<a href="https://app.staging.whatistracking.me" target="_blank" class="absolute top-4 left-1/2 -translate-x-1/2 z-10 bg-black/60 backdrop-blur-sm text-white px-4 py-2 rounded-lg text-sm hover:bg-black/80 transition-colors !shadow-none" style="pointer-events: auto; text-decoration: none;">
+  Open in new tab ↗
+</a>
 
 <iframe src="https://app.staging.whatistracking.me" class="absolute inset-0 w-full h-full border-none" />
 
