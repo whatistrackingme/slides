@@ -38,6 +38,17 @@ This skill will:
 
 The script uses TypeScript with proper error handling and verbose logging.
 
+## Style Constraints (automatically enforced)
+
+Every generated image automatically includes these style rules:
+- **No text, labels, or words** anywhere in the image
+- Single continuous scene, one unified viewpoint
+- No split screens, grids, or multiple panels
+- Dark moody cinematic lighting, photorealistic
+- 16:9 aspect ratio
+
+**Important:** Do not include text, typography, or lettering in your prompts. The model is instructed to produce purely visual content with no written elements.
+
 ## Example prompts
 
 - "A person wearing a QR code badge being photographed by a smartphone"

@@ -78,12 +78,16 @@ When creating images:
 3. Prefer: diagrams, screenshots, metaphors over stock photos
 4. Use full-screen, high-resolution images
 5. Ensure 16:9 aspect ratio
+6. NEVER include text, labels, or words in image prompts — images must be purely visual
+
+Dev mode: Generate 4 image variants per slide using the ImageQuadrant component.
+Each slide shows a 2x2 grid where you can click to expand any image full-screen.
+Use batch-generate.ts for efficient multi-image generation.
 
 Example prompts:
 - "Person in modern office scanning QR code on conference badge, looking unaware of digital tracking, photorealistic"
 - "Abstract visualization of physical space with invisible wifi signals and tracking beacons becoming visible"
 - "Simple architecture diagram showing QR code scanner connecting to data collector and user notification system"
-- "Before and after comparison: left shows person oblivious to tracking, right shows same person with awareness overlay"
 ```
 
 ### Phase 4: Content Guidelines

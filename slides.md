@@ -13,20 +13,24 @@ drawings:
   persist: false
 transition: slide-left
 title: What is Tracking ME?
-layout: cover
-background: /images/generated_2026-02-10T08-41-41_dark_moody_cityscape_at_night_with_glowing_qr_code.png
 ---
 
-<div class="slide-label">
-  <p class="text-5xl">What is Tracking ME?</p>
-</div>
-
-<div class="abs-br m-6 flex gap-2">
-  <a href="https://github.com/whatistrackingme" target="_blank" alt="GitHub"
-    class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon-logo-github />
-  </a>
-</div>
+<ImageQuadrant :images="[
+  '/images/generated_2026-02-10T08-41-41_dark_moody_cityscape_at_night_with_glowing_qr_code.png',
+  '/images/generated_2026-02-18T00-44-41_futuristic_city_skyline_at_dusk_with_holographic_q.png',
+  '/images/generated_2026-02-18T00-44-44_rain_soaked_urban_alley_at_night_with_qr_codes_glo.png',
+  '/images/generated_2026-02-18T00-44-46_aerial_view_of_a_sprawling_city_at_night_with_neon.png'
+]">
+  <div class="slide-label">
+    <p class="text-5xl">What is Tracking ME?</p>
+  </div>
+  <div class="abs-br m-6 flex gap-2" style="pointer-events: auto">
+    <a href="https://github.com/whatistrackingme" target="_blank" alt="GitHub"
+      class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
+      <carbon-logo-github />
+    </a>
+  </div>
+</ImageQuadrant>
 
 <!--
 Today I want to show you something that changed how I think about privacy.
@@ -49,13 +53,17 @@ Don't worry about what it does yet. Just scan it. Everyone good? Great. Keep you
 -->
 
 ---
-layout: cover
-background: /images/generated_2026-02-10T08-41-42_close_up_of_a_persons_hand_holding_a_smartphone_sc.png
----
 
-<div class="slide-label">
-  <p>What just happened?</p>
-</div>
+<ImageQuadrant :images="[
+  '/images/generated_2026-02-10T08-41-42_close_up_of_a_persons_hand_holding_a_smartphone_sc.png',
+  '/images/generated_2026-02-18T00-45-06_over_the_shoulder_view_of_someone_scanning_a_qr_co.png',
+  '/images/generated_2026-02-18T00-45-07_persons_hand_holding_a_phone_with_qr_scanner_app_o.png',
+  '/images/generated_2026-02-18T00-45-08_close_up_of_a_smartphone_screen_showing_a_qr_code_.png'
+]">
+  <div class="slide-label">
+    <p>What just happened?</p>
+  </div>
+</ImageQuadrant>
 
 <!--
 So — what just happened? You scanned a QR code. Simple, right?
@@ -66,13 +74,17 @@ You have absolutely no idea. And that's the problem.
 -->
 
 ---
-layout: cover
-background: /images/generated_2026-02-10T08-41-43_abstract_visualization_showing_digital_fingerprint.png
----
 
-<div class="slide-label">
-  <p>Every scan leaves a trace</p>
-</div>
+<ImageQuadrant :images="[
+  '/images/generated_2026-02-10T08-41-43_abstract_visualization_showing_digital_fingerprint.png',
+  '/images/generated_2026-02-18T00-45-27_abstract_network_of_connected_data_points_forming_.png',
+  '/images/generated_2026-02-18T00-45-27_ethereal_digital_footprints_glowing_on_a_dark_floo.png',
+  '/images/generated_2026-02-18T00-45-29_glowing_digital_data_trail_flowing_from_a_smartpho.png'
+]">
+  <div class="slide-label">
+    <p>Every scan leaves a trace</p>
+  </div>
+</ImageQuadrant>
 
 <!--
 This isn't hypothetical. In 2025, every physical interaction is potentially digital data.
@@ -83,13 +95,17 @@ Your movements, your habits, your preferences — captured and monetized without
 -->
 
 ---
-layout: cover
-background: /images/generated_2026-02-10T08-53-36_a_person_standing_in_a_doorway_looking_out_at_a_ci.png
----
 
-<div class="slide-label">
-  <p>We lock doors, not data</p>
-</div>
+<ImageQuadrant :images="[
+  '/images/generated_2026-02-10T08-53-36_a_person_standing_in_a_doorway_looking_out_at_a_ci.png',
+  '/images/generated_2026-02-18T00-45-45_silhouette_of_a_person_holding_physical_keys_while.png',
+  '/images/generated_2026-02-18T00-45-45_person_closing_a_heavy_vault_door_while_behind_the.png',
+  '/images/generated_2026-02-18T00-45-45_a_heavy_wooden_door_with_a_large_padlock_beside_a_.png'
+]">
+  <div class="slide-label">
+    <p>We lock doors, not data</p>
+  </div>
+</ImageQuadrant>
 
 <!--
 Here's what's strange. We understand physical privacy instinctively. We close curtains. We lock our front doors. We whisper secrets.
@@ -100,13 +116,17 @@ That gap is where the risk lives.
 -->
 
 ---
-layout: cover
-background: /images/generated_2026-02-10T07-47-57_a_person_wearing_a_qr_code_badge_on_their_clothing.png
----
 
-<div class="slide-label">
-  <p>Wear the tracker</p>
-</div>
+<ImageQuadrant :images="[
+  '/images/generated_2026-02-18T00-27-59_person_with_backpack_tablet_qr_code_walking_city_bridge.png',
+  '/images/generated_2026-02-18T00-46-00_rear_view_of_a_person_in_a_hoodie_walking_through_.png',
+  '/images/generated_2026-02-18T00-46-02_person_walking_through_a_busy_urban_street_at_nigh.png',
+  '/images/generated_2026-02-18T00-46-02_lone_figure_on_a_modern_pedestrian_bridge_at_night.png'
+]">
+  <div class="slide-label">
+    <p>Wear the tracker</p>
+  </div>
+</ImageQuadrant>
 
 <!--
 So we built something. It's called WhatIsTrackingMe, and the idea is simple: make invisible tracking visible through self-surveillance.
@@ -117,13 +137,17 @@ Simple concept. But the revelations are powerful.
 -->
 
 ---
-layout: cover
-background: /images/generated_2026-02-10T08-53-42_a_smartphone_receiving_a_glowing_notification_aler.png
----
 
-<div class="slide-label">
-  <p>Scan · Track · Notify</p>
-</div>
+<ImageQuadrant :images="[
+  '/images/generated_2026-02-10T08-53-42_a_smartphone_receiving_a_glowing_notification_aler.png',
+  '/images/generated_2026-02-18T00-46-15_smartphone_on_a_dark_surface_with_a_bright_notific.png',
+  '/images/generated_2026-02-18T00-46-18_persons_hand_holding_a_phone_receiving_a_push_noti.png',
+  '/images/generated_2026-02-18T00-46-18_close_up_of_a_smartwatch_and_phone_both_showing_sy.png'
+]">
+  <div class="slide-label">
+    <p>Scan · Track · Notify</p>
+  </div>
+</ImageQuadrant>
 
 <!--
 Here's how it works at a high level. Three steps.
@@ -138,13 +162,17 @@ That's the overview. We'll drill into the tech behind this in a few slides.
 -->
 
 ---
-layout: cover
-background: /images/generated_2026-02-10T08-53-46_a_crowded_conference_hall_from_above_at_night_atte.png
----
 
-<div class="slide-label">
-  <p>Why it matters</p>
-</div>
+<ImageQuadrant :images="[
+  '/images/generated_2026-02-10T08-53-46_a_crowded_conference_hall_from_above_at_night_atte.png',
+  '/images/generated_2026-02-18T00-46-34_birds_eye_view_of_a_crowded_event_space_at_night_w.png',
+  '/images/generated_2026-02-18T00-46-35_overhead_shot_of_people_walking_through_a_conventi.png',
+  '/images/generated_2026-02-18T00-46-37_wide_angle_view_of_a_packed_auditorium_from_the_ba.png'
+]">
+  <div class="slide-label">
+    <p>Why it matters</p>
+  </div>
+</ImageQuadrant>
 
 <!--
 This isn't just a proof of concept. There are real applications here.
@@ -174,12 +202,8 @@ This is the moment that changes people's perspective. You did something complete
 
 ---
 layout: cover
-background: /images/generated_2026-02-17T12-45-26_clean_minimal_system_architecture_diagram_on_dark_.png
+background: /images/generated_2026-02-18_stylized_idea_diagram.png
 ---
-
-<div class="slide-label">
-  <p>How the pieces connect</p>
-</div>
 
 <!--
 Before we dive into the details, let me show you the big picture.
@@ -192,13 +216,17 @@ This is privacy by architecture. Not by policy, not by promise — by math.
 -->
 
 ---
-layout: cover
-background: /images/generated_2026-02-10T08-57-00_a_sequence_diagram_showing_the_flow_between_four_e.png
----
 
-<div class="slide-label">
-  <p>Rust powers the backend</p>
-</div>
+<ImageQuadrant :images="[
+  '/images/generated_2026-02-10T08-57-00_a_sequence_diagram_showing_the_flow_between_four_e.png',
+  '/images/generated_2026-02-18T00-46-51_glowing_pipeline_of_encrypted_data_packets_moving_.png',
+  '/images/generated_2026-02-18T00-46-53_abstract_representation_of_encrypted_data_flowing_.png',
+  '/images/generated_2026-02-18T00-46-55_visualization_of_an_api_request_flowing_through_mi.png'
+]">
+  <div class="slide-label">
+    <p>Rust powers the backend</p>
+  </div>
+</ImageQuadrant>
 
 <!--
 Let's look under the hood. The backend is written in Rust using Axum — we chose it for performance and memory safety.
@@ -211,13 +239,17 @@ The critical part: the server never sees your plaintext data. Only your device c
 -->
 
 ---
-layout: cover
-background: /images/generated_2026-02-10T08-41-55_laptop_and_smartphone_showing_a_privacy_dashboard_.png
----
 
-<div class="slide-label">
-  <p>Your device, your data</p>
-</div>
+<ImageQuadrant :images="[
+  '/images/generated_2026-02-10T08-41-55_laptop_and_smartphone_showing_a_privacy_dashboard_.png',
+  '/images/generated_2026-02-18T00-47-08_close_up_of_a_smartphone_displaying_a_real_time_pr.png',
+  '/images/generated_2026-02-18T00-47-09_a_laptop_and_phone_on_a_dark_desk_both_showing_enc.png',
+  '/images/generated_2026-02-18T00-47-13_persons_hands_holding_a_tablet_showing_a_minimal_p.png'
+]">
+  <div class="slide-label">
+    <p>Your device, your data</p>
+  </div>
+</ImageQuadrant>
 
 <!--
 The frontend is a Tauri app — cross-platform, built with web technologies, but running natively on your machine.
@@ -228,13 +260,17 @@ You get real-time notifications when someone scans your QR code, plus a dashboar
 -->
 
 ---
-layout: cover
-background: /images/generated_2026-02-10T08-41-58_3d_printer_creating_a_small_wearable_badge_with_a_.png
----
 
-<div class="slide-label">
-  <p>Print your own tracker</p>
-</div>
+<ImageQuadrant :images="[
+  '/images/generated_2026-02-10T08-41-58_3d_printer_creating_a_small_wearable_badge_with_a_.png',
+  '/images/generated_2026-02-18T00-47-29_collection_of_freshly_3d_printed_qr_code_badges_an.png',
+  '/images/generated_2026-02-18T00-47-30_close_up_of_a_3d_printer_extruder_head_printing_a_.png',
+  '/images/generated_2026-02-18T00-47-33_3d_printer_in_action_creating_a_small_geometric_we.png'
+]">
+  <div class="slide-label">
+    <p>Print your own tracker</p>
+  </div>
+</ImageQuadrant>
 
 <!--
 The hardware side is where it gets fun. We use 3D-printed wearables — badges, clips, accessories — anything you can attach a QR code to.
@@ -245,13 +281,17 @@ Everything is open hardware. The STL files are on GitHub. You can literally prin
 -->
 
 ---
-layout: cover
-background: /images/generated_2026-02-17T12-56-51_four_3d_printing_filament_samples_side_by_side_on_.png
----
 
-<div class="slide-label">
-  <p>Choosing the right material</p>
-</div>
+<ImageQuadrant :images="[
+  '/images/generated_2026-02-17T12-56-51_four_3d_printing_filament_samples_side_by_side_on_.png',
+  '/images/generated_2026-02-18T00-47-45_colorful_3d_printing_filament_spools_arranged_on_a.png',
+  '/images/generated_2026-02-18T00-47-47_close_up_of_different_3d_printed_material_samples_.png',
+  '/images/generated_2026-02-18T00-47-48_arrangement_of_3d_printed_test_pieces_in_different.png'
+]">
+  <div class="slide-label">
+    <p>Choosing the right material</p>
+  </div>
+</ImageQuadrant>
 
 <!--
 Not all 3D printing filaments are equal — and for wearables, material choice matters.
@@ -268,13 +308,17 @@ Each material is a tradeoff: ease of printing versus durability, rigidity versus
 -->
 
 ---
-layout: cover
-background: /images/generated_2026-02-10T08-42-02_data_visualization_showing_unexpectedly_high_numbe.png
----
 
-<div class="slide-label">
-  <p>More tracking than you think</p>
-</div>
+<ImageQuadrant :images="[
+  '/images/generated_2026-02-10T08-42-02_data_visualization_showing_unexpectedly_high_numbe.png',
+  '/images/generated_2026-02-18T00-48-05_abstract_heatmap_visualization_showing_dense_clust.png',
+  '/images/generated_2026-02-18T00-48-05_dramatic_glowing_bar_chart_with_surprisingly_tall_.png',
+  '/images/generated_2026-02-18T00-48-11_holographic_style_data_dashboard_floating_in_dark_.png'
+]">
+  <div class="slide-label">
+    <p>More tracking than you think</p>
+  </div>
+</ImageQuadrant>
 
 <!--
 When we started testing this in the real world, the results surprised us.
@@ -285,13 +329,17 @@ Even interactions you think are anonymous leave traces. The volume of tracking h
 -->
 
 ---
-layout: cover
-background: /images/generated_2026-02-10T08-42-04_person_standing_in_a_public_space_with_visible_lig.png
----
 
-<div class="slide-label">
-  <p>Should scanning require consent?</p>
-</div>
+<ImageQuadrant :images="[
+  '/images/generated_2026-02-10T08-42-04_person_standing_in_a_public_space_with_visible_lig.png',
+  '/images/generated_2026-02-18T00-48-20_person_standing_under_a_surveillance_camera_spotli.png',
+  '/images/generated_2026-02-18T00-48-24_lone_figure_in_a_public_space_surrounded_by_subtle.png',
+  '/images/generated_2026-02-18T00-48-29_person_walking_through_a_public_corridor_with_came.png'
+]">
+  <div class="slide-label">
+    <p>Should scanning require consent?</p>
+  </div>
+</ImageQuadrant>
 
 <!--
 This raises a bigger question. When someone takes your photo, you can see the camera. You can object. There are social norms, even laws.
@@ -304,13 +352,17 @@ Privacy awareness is the first step toward privacy rights. And you can't be awar
 -->
 
 ---
-layout: cover
-background: /images/generated_2026-02-17T12-46-14_futuristic_privacy_technology_concept_on_dark_back.png
----
 
-<div class="slide-label">
-  <p>What comes next</p>
-</div>
+<ImageQuadrant :images="[
+  '/images/generated_2026-02-17T12-46-14_futuristic_privacy_technology_concept_on_dark_back.png',
+  '/images/generated_2026-02-18T00-48-39_futuristic_wearable_devices_including_smart_glasse.png',
+  '/images/generated_2026-02-18T00-48-42_next_generation_privacy_technology_concept_with_ho.png',
+  '/images/generated_2026-02-18T00-48-48_array_of_futuristic_privacy_devices_including_nfc_.png'
+]">
+  <div class="slide-label">
+    <p>What comes next</p>
+  </div>
+</ImageQuadrant>
 
 <!--
 So where is this headed?
@@ -323,13 +375,17 @@ The vision is a full privacy awareness layer for your physical life. Open source
 -->
 
 ---
-layout: cover
-background: /images/generated_2026-02-10T08-42-04_open_source_community_concept_diverse_hands_reachi.png
----
 
-<div class="slide-label">
-  <p>Make tracking visible</p>
-</div>
+<ImageQuadrant :images="[
+  '/images/generated_2026-02-10T08-42-04_open_source_community_concept_diverse_hands_reachi.png',
+  '/images/generated_2026-02-18T00-48-57_multiple_hands_holding_different_devices_all_showi.png',
+  '/images/generated_2026-02-18T00-48-58_diverse_group_of_people_gathered_around_a_glowing_.png',
+  '/images/generated_2026-02-18T00-49-08_collaborative_workspace_with_multiple_screens_show.png'
+]">
+  <div class="slide-label">
+    <p>Make tracking visible</p>
+  </div>
+</ImageQuadrant>
 
 <!--
 So here's what you can do.
@@ -344,16 +400,20 @@ The project is on GitHub — github.com/whatistrackingme. Come say hello.
 -->
 
 ---
-layout: cover
-background: /images/generated_2026-02-10T08-41-41_dark_moody_cityscape_at_night_with_glowing_qr_code.png
----
 
-<div class="flex items-center justify-center h-full">
-  <div class="bg-black/60 backdrop-blur-sm px-12 py-10 rounded-3xl text-center">
-    <p class="text-5xl font-extrabold text-white mb-6 uppercase tracking-wide">Questions?</p>
-    <p class="text-2xl text-gray-300">github.com/whatistrackingme</p>
+<ImageQuadrant :images="[
+  '/images/generated_2026-02-10T08-41-41_dark_moody_cityscape_at_night_with_glowing_qr_code.png',
+  '/images/generated_2026-02-18T00-44-41_futuristic_city_skyline_at_dusk_with_holographic_q.png',
+  '/images/generated_2026-02-18T00-44-44_rain_soaked_urban_alley_at_night_with_qr_codes_glo.png',
+  '/images/generated_2026-02-18T00-44-46_aerial_view_of_a_sprawling_city_at_night_with_neon.png'
+]">
+  <div class="flex items-center justify-center h-full">
+    <div class="bg-black/60 backdrop-blur-sm px-12 py-10 rounded-3xl text-center">
+      <p class="text-5xl font-extrabold text-white mb-6 uppercase tracking-wide">Questions?</p>
+      <p class="text-2xl text-gray-300">github.com/whatistrackingme</p>
+    </div>
   </div>
-</div>
+</ImageQuadrant>
 
 <!--
 Thank you. I'd love to hear your questions — about the technology, the privacy implications, or how you might use this in your own work.
