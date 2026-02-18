@@ -15,22 +15,19 @@ transition: slide-left
 title: What is Tracking ME?
 ---
 
-<ImageQuadrant :images="[
-  '/images/generated_2026-02-10T08-41-41_dark_moody_cityscape_at_night_with_glowing_qr_code.png',
-  '/images/generated_2026-02-18T00-44-41_futuristic_city_skyline_at_dusk_with_holographic_q.png',
-  '/images/generated_2026-02-18T00-44-44_rain_soaked_urban_alley_at_night_with_qr_codes_glo.png',
-  '/images/generated_2026-02-18T00-44-46_aerial_view_of_a_sprawling_city_at_night_with_neon.png'
-]">
-  <div class="slide-label">
-    <p class="text-5xl">What is Tracking ME?</p>
+<div class="absolute inset-0 bg-black">
+  <img src="/images/logo_stylized_green_techno.png" class="w-full h-full object-cover" />
+  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+  <div class="absolute bottom-16 left-12 z-10">
+    <p class="text-5xl font-bold text-white drop-shadow-lg">What is Tracking ME?</p>
   </div>
-  <div class="abs-br m-6 flex gap-2" style="pointer-events: auto">
+  <div class="absolute bottom-6 right-6 z-10 flex gap-2">
     <a href="https://github.com/whatistrackingme" target="_blank" alt="GitHub"
       class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
       <carbon-logo-github />
     </a>
   </div>
-</ImageQuadrant>
+</div>
 
 <!--
 Today I want to show you something that changed how I think about privacy.
@@ -182,9 +179,17 @@ Event organizers could offer tracking transparency to attendees. The use cases k
 
 ---
 
-<a href="https://app.staging.whatistracking.me" target="_blank" class="absolute top-4 left-1/2 -translate-x-1/2 z-10 bg-black/60 backdrop-blur-sm text-white px-4 py-2 rounded-lg text-sm hover:bg-black/80 transition-colors !shadow-none" style="pointer-events: auto; text-decoration: none;">
+<div class="absolute top-8 left-1/2 -translate-x-1/2 z-10 bg-black/60 backdrop-blur-sm px-6 py-3 rounded-3xl text-center" style="pointer-events: auto;">
+  <p class="font-bold text-white text-2xl uppercase tracking-wide" style="font-family: 'Space Grotesk Variable', sans-serif;">What is Tracking ME?</p>
+</div>
+
+<a href="https://app.staging.whatistracking.me" target="_blank" class="absolute top-22 left-1/2 -translate-x-1/2 z-10 bg-black/60 backdrop-blur-sm text-white px-4 py-2 rounded-lg text-sm hover:bg-black/80 transition-colors !shadow-none" style="pointer-events: auto; text-decoration: none;">
   Open in new tab ↗
 </a>
+
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 bg-black/60 backdrop-blur-sm px-6 py-3 rounded-3xl text-center" style="pointer-events: auto;">
+  <p class="font-bold text-white text-lg uppercase tracking-wide" style="font-family: 'Space Grotesk Variable', sans-serif;">February 2026</p>
+</div>
 
 <iframe src="https://app.staging.whatistracking.me" class="absolute inset-0 w-full h-full border-none" />
 
