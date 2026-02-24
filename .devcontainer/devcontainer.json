@@ -10,7 +10,7 @@
     }
   },
   "postCreateCommand": "npm install",
-  "postStartCommand": "bash -c 'export $(cat .env | xargs) && npm run dev:pm2'",
+  "postStartCommand": "npm run dev:pm2",
   "forwardPorts": [3030],
   "portsAttributes": {
     "3030": {
