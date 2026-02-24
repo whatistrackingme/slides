@@ -30,9 +30,7 @@ title: What is Tracking ME?
 </div>
 
 <!--
-Today I want to show you something that changed how I think about privacy.
-
-Look at this city. QR codes on every billboard, every storefront, every phone. We've built an entire infrastructure for tracking — and most of us don't even notice it.
+- We've built an invisible infrastructure for tracking — and most of us don't notice it
 -->
 
 ---
@@ -40,9 +38,7 @@ Look at this city. QR codes on every billboard, every storefront, every phone. W
 <iframe src="https://app.staging.whatistracking.me/qr" class="absolute inset-0 w-full h-full border-none" allow="camera" />
 
 <!--
-Before we get started — I want you all to pull out your phones and scan this QR code. Go ahead, I'll wait.
-
-Don't worry about what it does yet. Just scan it. Everyone good? Great. Keep your phones handy.
+- Pull out your phones and scan this QR code — keep them handy
 -->
 
 ---
@@ -59,11 +55,7 @@ Don't worry about what it does yet. Just scan it. Everyone good? Great. Keep you
 </ImageQuadrant>
 
 <!--
-So — what just happened? You scanned a QR code. Simple, right?
-
-But think about it. What data was just created? Your device type, your IP address, the time, your rough location. Where did that data go? Who has it now? Can you get it back?
-
-You have absolutely no idea. And that's the problem.
+- That simple scan just created data you can't see, control, or get back
 -->
 
 ---
@@ -80,11 +72,7 @@ You have absolutely no idea. And that's the problem.
 </ImageQuadrant>
 
 <!--
-This isn't hypothetical. In 2025, every physical interaction is potentially digital data.
-
-You scan a menu at a restaurant — tracked. You badge into a conference — tracked. You walk past a smart camera — tracked. AI-powered surveillance has made this frictionless and invisible.
-
-Your movements, your habits, your preferences — captured and monetized without your awareness. That's the world we live in right now.
+- Every physical interaction — menus, badges, cameras — silently becomes digital data
 -->
 
 ---
@@ -101,11 +89,7 @@ Your movements, your habits, your preferences — captured and monetized without
 </ImageQuadrant>
 
 <!--
-Here's what's strange. We understand physical privacy instinctively. We close curtains. We lock our front doors. We whisper secrets.
-
-But digitally? We freely scan QR codes, tap NFC readers, walk past cameras — without a second thought. There's a massive gap between how we protect our physical space and how casually we give away our digital presence.
-
-That gap is where the risk lives.
+- We instinctively protect physical privacy but casually give away our digital presence
 -->
 
 ---
@@ -122,11 +106,7 @@ That gap is where the risk lives.
 </ImageQuadrant>
 
 <!--
-So we built something. It's called WhatIsTrackingMe, and the idea is simple: make invisible tracking visible through self-surveillance.
-
-You wear a QR code — on a badge, a wristband, a 3D-printed accessory. When someone or something scans it, you find out. You see who scanned you, when, and from where.
-
-Simple concept. But the revelations are powerful.
+- WhatIsTrackingMe: wear a QR code and find out who scans you, when, and where
 -->
 
 ---
@@ -143,15 +123,7 @@ Simple concept. But the revelations are powerful.
 </ImageQuadrant>
 
 <!--
-Here's how it works at a high level. Three steps.
-
-First, you wear a unique QR code. Could be a 3D-printed badge, an e-ink display on your jacket, whatever you want.
-
-Second, someone scans it — a person, a camera system, a venue's tracking infrastructure. The scan gets recorded with metadata.
-
-Third, you get notified. In real time. On your phone. You see who, when, where, and how often.
-
-That's the overview. We'll drill into the tech behind this in a few slides.
+- Three steps: wear a QR code, someone scans it, you get notified in real time
 -->
 
 ---
@@ -168,13 +140,7 @@ That's the overview. We'll drill into the tech behind this in a few slides.
 </ImageQuadrant>
 
 <!--
-This isn't just a proof of concept. There are real applications here.
-
-Imagine ranking businesses by how aggressively they track visitors. Or studying how QR codes spread virally through social networks. Organizations could use this for privacy compliance auditing.
-
-Researchers get a tool for studying real-world tracking patterns. You personally get a dashboard showing your digital footprint — who's watching you and how often.
-
-Event organizers could offer tracking transparency to attendees. The use cases keep growing.
+- Real applications: business ranking, compliance auditing, research, and personal dashboards
 -->
 
 ---
@@ -194,11 +160,7 @@ Event organizers could offer tracking transparency to attendees. The use cases k
 <iframe src="https://app.staging.whatistracking.me" class="absolute inset-0 w-full h-full border-none" />
 
 <!--
-Let me show you the real thing. This is our staging environment — the same app you'd use.
-
-Remember that QR code you scanned earlier? Let's see what happened. I can see every scan — the timestamp, the device info, the interaction trail.
-
-This is the moment that changes people's perspective. You did something completely ordinary — scanned a QR code — and now I can see exactly when you did it.
+- Live demo: the QR code you scanned earlier — I can see exactly when you did it
 -->
 
 ---
@@ -207,13 +169,7 @@ background: /images/generated_2026-02-18_stylized_idea_diagram.png
 ---
 
 <!--
-Before we dive into the details, let me show you the big picture.
-
-On the left — the e-ink badge. It broadcasts your encrypted QR code. In the center — the Rust Axum server. It receives scan events, stores encrypted blobs in PostgreSQL, and routes notifications. On the right — the Tauri app on your device. It polls for new scans and decrypts everything locally.
-
-The key insight: data flows left to right, but decryption only happens on the far right — on your device. The server in the middle is deliberately blind. It stores data it cannot read.
-
-This is privacy by architecture. Not by policy, not by promise — by math.
+- Privacy by architecture: the server stores data it cannot read — decryption only happens on your device
 -->
 
 ---
@@ -230,13 +186,7 @@ This is privacy by architecture. Not by policy, not by promise — by math.
 </ImageQuadrant>
 
 <!--
-Let's look under the hood. The backend is written in Rust using Axum — we chose it for performance and memory safety.
-
-Here's the flow: Your phone generates a key pair locally. Only the public key gets sent to our server during registration. The server generates random prefixes — think of them as anonymous mailboxes — and associates them with your public key.
-
-Your broadcaster device — the QR badge — encrypts timestamps with AES-128. When someone scans your QR code, that interaction hits our collector, gets filtered by prefix, and waits for you to poll.
-
-The critical part: the server never sees your plaintext data. Only your device can decrypt it. Privacy by architecture, not by promise.
+- Rust/Axum backend where the server never sees plaintext — only your device can decrypt
 -->
 
 ---
@@ -253,11 +203,7 @@ The critical part: the server never sees your plaintext data. Only your device c
 </ImageQuadrant>
 
 <!--
-The frontend is a Tauri app — cross-platform, built with web technologies, but running natively on your machine.
-
-Why Tauri? Because decryption happens entirely on your device. Your private key never leaves your phone or laptop. The server sends you encrypted blobs, and only your app can unlock them.
-
-You get real-time notifications when someone scans your QR code, plus a dashboard that shows tracking patterns over time. All the data lives on your device. We literally cannot read it even if we wanted to.
+- Tauri app keeps your private key local — we literally cannot read your data
 -->
 
 ---
@@ -274,11 +220,7 @@ You get real-time notifications when someone scans your QR code, plus a dashboar
 </ImageQuadrant>
 
 <!--
-The hardware side is where it gets fun. We use 3D-printed wearables — badges, clips, accessories — anything you can attach a QR code to.
-
-For dynamic tracking, we use Inkplate e-ink displays. They refresh the QR code periodically with new encrypted timestamps. Low power, always-on, and the QR code changes so you can correlate exact times with interactions.
-
-Everything is open hardware. The STL files are on GitHub. You can literally print your own tracker tonight.
+- Open hardware: 3D-printed wearables and e-ink displays — print your own tonight
 -->
 
 ---
@@ -295,17 +237,7 @@ Everything is open hardware. The STL files are on GitHub. You can literally prin
 </ImageQuadrant>
 
 <!--
-Not all 3D printing filaments are equal — and for wearables, material choice matters.
-
-PLA — polylactic acid — is the easiest to print. It's plant-based, biodegradable, and great for prototyping. But it's brittle and softens at just 60°C, so it won't survive a hot car or direct sun.
-
-PETG — polyethylene terephthalate glycol — is the workhorse. It's the same family as water bottles. Better heat resistance, some flex, and it handles UV exposure reasonably well. Most of our badges use PETG.
-
-ASA — acrylonitrile styrene acrylate — is the outdoor champion. UV-stable, heat-resistant to 100°C, and tough. If your tracker lives outside on a backpack or bike, ASA is the answer. Harder to print though — needs an enclosure and good ventilation because of fumes.
-
-TPU — thermoplastic polyurethane — is the flexible one. Rubber-like, perfect for wristbands and clips that need to bend without snapping. Trickiest to print because it's elastic, but essential for body-worn form factors.
-
-Each material is a tradeoff: ease of printing versus durability, rigidity versus flex, indoor versus outdoor. We publish recommended settings for all four.
+- Four materials (PLA, PETG, ASA, TPU) — each trades ease of printing against durability and flexibility
 -->
 
 ---
@@ -322,11 +254,7 @@ Each material is a tradeoff: ease of printing versus durability, rigidity versus
 </ImageQuadrant>
 
 <!--
-When we started testing this in the real world, the results surprised us.
-
-People are tracked far more than they think. We saw scans from systems we didn't even know were scanning — automated venue trackers, digital signage networks, security infrastructure.
-
-Even interactions you think are anonymous leave traces. The volume of tracking happening in ordinary public spaces is staggering. Most people have no idea it's happening right next to them, every day.
+- Real-world testing revealed far more tracking than anyone expected — from systems we didn't even know were scanning
 -->
 
 ---
@@ -343,13 +271,7 @@ Even interactions you think are anonymous leave traces. The volume of tracking h
 </ImageQuadrant>
 
 <!--
-This raises a bigger question. When someone takes your photo, you can see the camera. You can object. There are social norms, even laws.
-
-But when someone scans a QR code near you, or a system logs your presence — it's completely invisible. No flash, no shutter sound, no consent dialog.
-
-Physical spaces are becoming digital fishbowls. Should scanning require the same visibility as photography? Should you have the right to know when you're being digitally observed?
-
-Privacy awareness is the first step toward privacy rights. And you can't be aware of what you can't see.
+- Photography is visible; digital scanning is invisible — should it require the same consent?
 -->
 
 ---
@@ -366,13 +288,7 @@ Privacy awareness is the first step toward privacy rights. And you can't be awar
 </ImageQuadrant>
 
 <!--
-So where is this headed?
-
-We're working on mobile apps — native iOS and Android — so you don't need a desktop to monitor your tracking. AI-powered scan detection that can identify when cameras and automated systems read your QR code, not just phones.
-
-We're exploring NFC and Bluetooth beacons alongside QR codes. Smart glasses integration. Cross-platform tracking correlation — connecting the dots between different tracking systems that observe you.
-
-The vision is a full privacy awareness layer for your physical life. Open source, user-owned, always transparent.
+- Coming next: mobile apps, AI scan detection, NFC/Bluetooth, and smart glasses integration
 -->
 
 ---
@@ -389,15 +305,7 @@ The vision is a full privacy awareness layer for your physical life. Open source
 </ImageQuadrant>
 
 <!--
-So here's what you can do.
-
-Try it. Print a QR code, wear it for a week, and see what happens. The results will change how you think about public spaces.
-
-Contribute. We need hardware designers, Rust developers, privacy researchers. The entire project is open source.
-
-Spread awareness. Talk about what you learn. Share the data. The goal is simple: everyone should know when they're being tracked.
-
-The project is on GitHub — github.com/whatistrackingme. Come say hello.
+- Try it, contribute, spread awareness — everything is open source on GitHub
 -->
 
 ---
@@ -410,14 +318,12 @@ The project is on GitHub — github.com/whatistrackingme. Come say hello.
 ]">
   <div class="flex items-center justify-center h-full">
     <div class="bg-black/60 backdrop-blur-sm px-12 py-10 rounded-3xl text-center">
-      <p class="text-5xl font-extrabold text-white mb-6 uppercase tracking-wide">Questions?</p>
+      <p class="text-5xl font-extrabold text-white mb-6 uppercase tracking-wide">Discussion</p>
       <p class="text-2xl text-gray-300">github.com/whatistrackingme</p>
     </div>
   </div>
 </ImageQuadrant>
 
 <!--
-Thank you. I'd love to hear your questions — about the technology, the privacy implications, or how you might use this in your own work.
-
-The repo is at github.com/whatistrackingme. Issues and PRs welcome.
+- Let's discuss — repo at github.com/whatistrackingme
 -->
