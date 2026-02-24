@@ -1,13 +1,20 @@
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 
-const allowedHost = process.env.VITE_ALLOWED_HOST
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd(), '')
 
-export default defineConfig({
-  base: process.env.GITHUB_ACTIONS ? '/slides/' : '/',
-  server: {
-    host: '0.0.0.0',
-    port: 3030,
-    strictPort: true,
-    allowedHosts: allowedHost ? [allowedHost] : []
+  const allowedHosts = (env.VITE_ALLOWED_HOSTS || '')
+    .split(',')
+    .map((host: string) => host.trim())
+    .filter(Boolean)
+
+  return {
+    base: process.env.GITHUB_ACTIONS ? '/slides/' : '/',
+    server: {
+      host: '0.0.0.0',
+      port: 3030,
+      strictPort: true,
+      allowedHosts
+    }
   }
 })
