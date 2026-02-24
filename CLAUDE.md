@@ -26,6 +26,13 @@ The dev server runs automatically via PM2 in the devcontainer:
 - **HMR:** Changes to `slides.md` appear instantly
 - **Commands:** `npm run dev:logs`, `npm run dev:stop`, `npm run dev:pm2`
 
+> **For Claude Agents**: Before starting the dev server, always check if it's already running:
+> ```bash
+> pm2 list | grep slidev  # Check PM2 process
+> curl -s http://localhost:3030 > /dev/null && echo "Running" || echo "Not running"
+> ```
+> **Never start a new dev server without checking first.** If PM2 shows `slidev` is already running, do not run `npm run dev:pm2` again.
+
 ### Creating Content
 
 Use the `/slide-builder` skill to interactively create and refine slides. The skill implements research-backed principles:
@@ -90,17 +97,12 @@ Technical audience interested in privacy, security, and digital identity.
 ## Environment Files
 
 - `.env` - Gemini API key for image generation
-- `.env.local` - Allowed hosts for Vite (Coder/Codespaces URLs)
+- `.env.local` - Allowed hosts for Vite dev server (`VITE_ALLOWED_HOSTS`, comma-separated)
 - `example.env` & `example.env.local` - Templates for contributors
 
 **IMPORTANT:** Never commit actual hostnames or secrets into `.env.local` or `.env`. These files are gitignored. Only commit the `example.env` and `example.env.local` templates with placeholder values.
 
-**Known issue — "Blocked request" / allowedHosts:**
-Vite loads `.env.local` *after* `vite.config.ts` is evaluated, so `VITE_ALLOWED_HOST` is undefined when the config runs. The fix is to export the env var into the shell *before* starting the dev server:
-```bash
-VITE_ALLOWED_HOST="your-host-here" npx pm2 start "npx slidev --remote" --name slidev
-```
-The devcontainer usually handles this automatically, but if starting PM2 manually, the var must be passed explicitly.
+> **For Claude Agents**: Before starting the dev server, check that `.env.local` exists and contains `VITE_ALLOWED_HOSTS`. If it doesn't exist, ask the user for the proxy hostname and create it from `example.env.local`.
 
 See `docs/devcontainer-setup.md` for technical setup details.
 
