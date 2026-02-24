@@ -25,6 +25,8 @@
   "homepage": "https://github.com/whatistrackingme/slides#readme",
   "devDependencies": {
     "@google/generative-ai": "^0.24.1",
+    "@iconify-json/feather": "^1.2.1",
+    "@iconify-json/simple-icons": "^1.2.71",
     "@slidev/cli": "^52.11.5",
     "@slidev/theme-default": "^0.25.0",
     "@types/node": "^25.2.2",
@@ -34,6 +36,8 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "@fontsource-variable/space-grotesk": "^5.2.10"
+    "@fontsource-variable/noto-sans": "^5.2.10",
+    "@fontsource-variable/space-grotesk": "^5.2.10",
+    "smiles-drawer": "^2.1.7"
   }
 }

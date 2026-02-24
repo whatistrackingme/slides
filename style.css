@@ -1,3 +1,50 @@
+/* ── WITM Mocha brand tokens (from branding/src/styles/global.css) ── */
+:root {
+  --witm-accent: #a6e3a1;
+  --witm-accent-content: #111113;
+  --witm-base: #161618;
+  --witm-mantle: #111113;
+  --witm-crust: #0c0c0d;
+  --witm-surface0: #262730;
+  --witm-surface1: #393a44;
+  --witm-surface2: #4c4d57;
+  --witm-overlay0: #6c6e77;
+  --witm-overlay1: #80828b;
+  --witm-text: #cdddd2;
+  --witm-subtext0: #a6b5aa;
+  --witm-subtext1: #bac9be;
+  --witm-accent-30: rgb(166 227 161 / 0.3);
+  --witm-accent-50: rgb(166 227 161 / 0.5);
+  --witm-mantle-85: rgb(17 17 19 / 0.85);
+  --witm-font-display: 'Space Grotesk Variable', sans-serif;
+  --witm-font-body: 'Noto Sans Variable', sans-serif;
+}
+
+/* Non-title body text: Noto Sans, normal weight everywhere */
+.slide-text,
+.slide-body,
+.slide-quote,
+.slide-author {
+  font-family: var(--witm-font-body);
+  font-weight: 400;
+}
+
+/* Hero fade-in animation (from branding guide) */
+@keyframes hero-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-fade-in {
+  animation: hero-fade-in-up 0.7s ease-out both;
+}
+
 .slide-label {
   position: absolute;
   top: 2.5rem;
@@ -23,4 +70,17 @@
 .slide-label p.text-5xl {
   font-size: 3rem;
   line-height: 1.4;
+}
+
+/* Override .slidev-layout p { line-height: 1.4em } for custom slide components */
+.slidev-layout .slide-body {
+  line-height: 2;
+}
+
+.slidev-layout .slide-text {
+  line-height: 1.625;
+}
+
+.slidev-layout .slide-quote {
+  line-height: 1.8;
 }
