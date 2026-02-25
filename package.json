@@ -39,6 +39,7 @@
     "@fontsource-variable/noto-sans": "^5.2.10",
     "@fontsource-variable/space-grotesk": "^5.2.10",
     "@types/three": "^0.183.1",
+    "qrcode-vue3": "^1.7.1",
     "smiles-drawer": "^2.1.7",
     "three": "^0.183.1"
   }
