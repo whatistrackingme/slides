@@ -95,7 +95,7 @@ title: WhatIsTracking.Me
 
 ---
 
-<SlideImage overlay="The Problem" subtitle="A Global Dragnet" :images="[
+<SlideImage overlay="The Problem" subtitle="A Global Dragnet?" :images="[
   '/images/generated_2026-02-25T04-42-01_a_dark_omniscient_surveillance_concept_a_massive_t.png',
 ]" />
 
@@ -107,6 +107,18 @@ title: WhatIsTracking.Me
 - 2.5 billion QR scans expected worldwide in 2026
 - Menus, payments, check-ins — all silently logged
 - Physical spaces are becoming digital surveillance zones
+-->
+
+---
+
+<SlideImage overlay="Your Face is a QR Code" :images="[
+  '/images/generated_2026-02-25T07-16-11_trippy_close_up_portrait_of_a_person_whose_face_mo.png',
+]" />
+
+<!--
+- Every scan turns your presence into data
+- Your face, your location, your habits — encoded and tracked
+- In the digital world, you are already a QR code
 -->
 
 ---
@@ -132,11 +144,7 @@ title: WhatIsTracking.Me
 
 ---
 
-<SlideImage overlay="How It Works" :images="[
-  { src: '/images/generated_2026-02-10T08-41-42_close_up_of_a_persons_hand_holding_a_smartphone_sc.png', label: 'Scan' },
-  { src: '/images/generated_2026-02-18T00-46-15_smartphone_on_a_dark_surface_with_a_bright_notific.png', label: 'Notify' },
-  { src: '/images/generated_2026-02-10T08-41-55_laptop_and_smartphone_showing_a_privacy_dashboard_.png', label: 'Dashboard' },
-]" />
+<SlideHowItWorks />
 
 <!--
 - Wear a QR code linked to your encrypted identity
@@ -146,6 +154,22 @@ title: WhatIsTracking.Me
 - Scanner hits the API, triggering a push notification
 - Scan metadata is encrypted — only your device can read it
 - No accounts, no sign-ups, no third-party tracking
+-->
+
+---
+
+<SlideMermaidChart :quadrants="[
+  { title: 'QR Generated', label: 'Client Device', description: 'Encodes an encrypted timestamp and unique identifier' },
+  { title: 'Bait Taken', label: 'Real World', description: 'CCTV cameras, bots, scanners, and browsers all trigger the trap' },
+  { title: 'Logged & Purged', label: 'Tracking Server', description: 'DNS and HTTP requests stored pseudoanonymously, deleted once read' },
+  { title: 'Location Matching', label: 'Client Dashboard', description: 'Client aligns the decrypted timestamp with local position history' },
+]" />
+
+<!--
+- Four-phase zero-knowledge pipeline
+- Server never sees plaintext — only ciphertext passes through
+- Push notification carries encrypted payload, not raw data
+- Decryption is exclusively client-side
 -->
 
 ---
@@ -275,6 +299,20 @@ title: WhatIsTracking.Me
 
 ---
 
+<SlideColumns title="TODOs" :items="[
+  { text: 'Tauri Native apps with background location', highlight: true },
+  { text: 'More efficient QR encoding', highlight: true },
+  'NFC & Bluetooth beacon support',
+  { text: 'Fingerprinting', highlight: true },
+  'Timescale filtering on dashboard',
+  'Reverse geocoding for location history',
+  'Internationalization (i18n)',
+  'GeoIP country-code on interactions',
+  'Location heatmaps over time',
+]" size="sm" spacing="tight" />
+
+---
+
 <SlideSection title="Why?" />
 
 <!--
@@ -309,130 +347,42 @@ title: WhatIsTracking.Me
 
 ---
 
-<SlideParagraph
-  title="Our Approach"
-  text="WhatIsTracking.Me flips the script on digital tracking. Instead of hiding from surveillance, we make it visible. Wear a QR code, and when someone scans it, you get notified — turning passive tracking into an active, transparent experience."
-/>
-
-<!--
-- Self-surveillance as a privacy awareness tool
-- Open source — hardware, software, and data
-- Privacy-preserving by design, not by policy
--->
-
----
-
-<SlideImage overlay="We Lock Doors, Not Data" :images="[
-  '/images/generated_2026-02-10T08-53-36_a_person_standing_in_a_doorway_looking_out_at_a_ci.png',
-]" />
-
-<!--
-- "Privacy is not about having something to hide. It is about having the right to choose what you share." — Edward Snowden
-- You lock your front door every day
-- You shred documents with your address on them
-- But you scan unknown QR codes without a second thought
-- Digital privacy habits lag decades behind physical ones
--->
-
----
-
-<SlideImage overlay="Should Scanning Require Consent?" :images="[
-  '/images/generated_2026-02-10T08-42-04_person_standing_in_a_public_space_with_visible_lig.png',
-  '/images/generated_2026-02-18T00-48-20_person_standing_under_a_surveillance_camera_spotli.png',
-  '/images/generated_2026-02-18T00-48-24_lone_figure_in_a_public_space_surrounded_by_subtle.png',
-  '/images/generated_2026-02-18T00-48-29_person_walking_through_a_public_corridor_with_came.png',
-]" />
-
-<!--
-- Photography requires visible intent — scanning does not
-- No legal framework treats passive QR scanning as surveillance
-- Consent models exist for cookies but not for physical spaces
-- Should scanning someone require the same consent as photographing them?
--->
-
----
-
-<SlideImage overlay="Make Tracking Visible" :images="[
-  '/images/generated_2026-02-10T08-42-04_open_source_community_concept_diverse_hands_reachi.png',
-  '/images/generated_2026-02-18T00-48-57_multiple_hands_holding_different_devices_all_showi.png',
-  '/images/generated_2026-02-18T00-48-58_diverse_group_of_people_gathered_around_a_glowing_.png',
-  '/images/generated_2026-02-18T00-49-08_collaborative_workspace_with_multiple_screens_show.png',
-]" />
-
-<!--
-- Everything is open source — code, hardware designs, and data schemas
-- MIT licensed — use it, fork it, improve it
-- Contributions welcome: Rust, TypeScript, 3D printing, research
-- github.com/whatistrackingme
--->
-
----
-
-<SlideBullets title="Call to Action" :items="[
-  'Print a badge and wear it for a week',
-  'Check the dashboard — you will be surprised',
-  'Star the repo, open an issue, submit a PR',
-  'Start a conversation about physical-space privacy',
-]" />
-
-<!--
-- Concrete next steps for the audience
--->
-
----
-
-<SlideImage overlay="What Comes Next" :images="[
-  '/images/generated_2026-02-17T12-46-14_futuristic_privacy_technology_concept_on_dark_back.png',
-  '/images/generated_2026-02-18T00-48-39_futuristic_wearable_devices_including_smart_glasse.png',
-  '/images/generated_2026-02-18T00-48-42_next_generation_privacy_technology_concept_with_ho.png',
-  '/images/generated_2026-02-18T00-48-48_array_of_futuristic_privacy_devices_including_nfc_.png',
-]" />
-
-<!--
-- Native mobile apps with background scan detection
-- NFC and Bluetooth beacon support
-- AI-powered scan pattern analysis
-- Smart glasses integration for real-time awareness
--->
-
----
-
 <div class="absolute inset-0 flex flex-col items-center justify-center px-16" style="background: var(--witm-base)">
   <div class="grid grid-cols-4 gap-x-20 gap-y-14">
     <div class="flex flex-col items-center gap-4">
-      <simple-icons-claude class="text-5xl" style="color: var(--witm-text)" />
-      <span class="text-sm" style="color: var(--witm-subtext0)">Claude Code</span>
+      <simple-icons-claude class="text-5xl" />
+      <span class="text-sm">Claude Code</span>
     </div>
     <div class="flex flex-col items-center gap-4">
-      <simple-icons-googlegemini class="text-5xl" style="color: var(--witm-text)" />
-      <span class="text-sm" style="color: var(--witm-subtext0)">Gemini Imagen</span>
+      <simple-icons-googlegemini class="text-5xl" />
+      <span class="text-sm">Gemini Imagen</span>
     </div>
     <div class="flex flex-col items-center gap-4">
-      <simple-icons-threedotjs class="text-5xl" style="color: var(--witm-text)" />
-      <span class="text-sm" style="color: var(--witm-subtext0)">Three.js</span>
+      <simple-icons-threedotjs class="text-5xl" />
+      <span class="text-sm">Three.js</span>
     </div>
     <div class="flex flex-col items-center gap-4">
-      <carbon-chemistry class="text-5xl" style="color: var(--witm-text)" />
-      <span class="text-sm" style="color: var(--witm-subtext0)">SMILES Drawer</span>
+      <carbon-chemistry class="text-5xl" />
+      <span class="text-sm">SMILES Drawer</span>
     </div>
     <div class="flex flex-col items-center gap-4">
-      <carbon-presentation-file class="text-5xl" style="color: var(--witm-text)" />
-      <span class="text-sm" style="color: var(--witm-subtext0)">Slidev</span>
+      <carbon-presentation-file class="text-5xl" />
+      <span class="text-sm">Slidev</span>
     </div>
     <div class="flex flex-col items-center gap-4">
-      <simple-icons-vuedotjs class="text-5xl" style="color: var(--witm-text)" />
-      <span class="text-sm" style="color: var(--witm-subtext0)">Vue 3</span>
+      <simple-icons-vuedotjs class="text-5xl" />
+      <span class="text-sm">Vue 3</span>
     </div>
     <div class="flex flex-col items-center gap-4">
-      <simple-icons-vite class="text-5xl" style="color: var(--witm-text)" />
-      <span class="text-sm" style="color: var(--witm-subtext0)">Vite</span>
+      <simple-icons-vite class="text-5xl" />
+      <span class="text-sm">Vite</span>
     </div>
     <div class="flex flex-col items-center gap-4">
-      <simple-icons-typescript class="text-5xl" style="color: var(--witm-text)" />
-      <span class="text-sm" style="color: var(--witm-subtext0)">TypeScript</span>
+      <simple-icons-typescript class="text-5xl" />
+      <span class="text-sm">TypeScript</span>
     </div>
   </div>
-  <p class="absolute bottom-12 text-lg" style="color: var(--witm-text)">This presentation was vibe coded end-to-end</p>
+  <p class="absolute bottom-12 text-lg">This presentation was vibe coded end-to-end</p>
 </div>
 
 <!--
@@ -447,4 +397,31 @@ title: WhatIsTracking.Me
 
 <!--
 - Let's discuss
+-->
+
+---
+
+<SlideColumns title="Discussion Questions" :items="[
+  'Should passive scanning require consent?',
+  'Why do we lock doors but not data?',
+  'Can self-surveillance change how we think about privacy?',
+  'Is privacy about secrecy — or about choice?',
+  'What would you learn from wearing a QR code for a week?',
+  'Should physical spaces have the same consent models as cookies?',
+  'How do we make tracking visible without normalizing it?',
+  'What role should open source play in privacy tools?',
+]" size="base" spacing="loose" />
+
+<!--
+- "Privacy is not about having something to hide. It is about having the right to choose what you share." — Edward Snowden
+-->
+
+---
+
+<SlideThankYou />
+
+<!--
+- Thank you for listening
+- The QR code links to our GitHub — open source, no tracking
+- Star the repo, open issues, contribute
 -->
