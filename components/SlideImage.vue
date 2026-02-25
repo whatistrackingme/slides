@@ -192,7 +192,6 @@ const displayImages = computed<NormalizedImage[]>(() => {
   font-size: 3rem;
   line-height: 1.4;
   font-weight: 700;
-  color: white;
   letter-spacing: 0.025em;
   text-align: right;
 }
@@ -206,7 +205,6 @@ const displayImages = computed<NormalizedImage[]>(() => {
   font-size: 2rem;
   line-height: 1.4;
   font-weight: 400;
-  color: white;
   letter-spacing: 0.025em;
   text-align: right;
 }
@@ -217,7 +215,6 @@ const displayImages = computed<NormalizedImage[]>(() => {
 
 .image-label {
   font-family: var(--witm-font-display);
-  color: var(--witm-accent);
   letter-spacing: 0.04em;
 }
 </style>

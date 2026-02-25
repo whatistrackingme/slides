@@ -44,7 +44,6 @@ defineProps<{
   height: 42rem;
   left: -10rem;
   top: -10rem;
-  color: var(--witm-accent);
   opacity: 0.06;
   z-index: 0;
   pointer-events: none;
@@ -65,7 +64,6 @@ defineProps<{
   border-radius: 0;
 }
 .slide-quote {
-  color: var(--witm-text);
 }
 .author-row {
   margin-top: 3rem;
@@ -78,7 +76,6 @@ defineProps<{
   border-radius: 1px;
 }
 .slide-author {
-  color: var(--witm-subtext0);
   letter-spacing: 0.02em;
 }
 </style>

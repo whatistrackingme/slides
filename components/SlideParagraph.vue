@@ -30,10 +30,8 @@ defineProps<{
 }
 .slide-heading {
   font-family: var(--witm-font-display);
-  color: var(--witm-accent);
   letter-spacing: 0.04em;
 }
 .slide-body {
-  color: var(--witm-text);
 }
 </style>

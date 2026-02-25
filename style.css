@@ -20,6 +20,11 @@
   --witm-font-body: 'Noto Sans Variable', sans-serif;
 }
 
+/* Brand utility colors */
+.text-primary {
+  color: var(--witm-accent) !important;
+}
+
 /* Non-title body text: Noto Sans, normal weight everywhere */
 .slide-text,
 .slide-body,
@@ -83,4 +88,13 @@
 
 .slidev-layout .slide-quote {
   line-height: 1.8;
+}
+
+/* ── Reusable grid background effect ── */
+.bg-grid {
+  background-color: var(--witm-base);
+  background-image:
+    linear-gradient(var(--witm-accent-10, rgba(166, 227, 161, 0.07)) 1px, transparent 1px),
+    linear-gradient(90deg, var(--witm-accent-10, rgba(166, 227, 161, 0.07)) 1px, transparent 1px);
+  background-size: 48px 48px;
 }

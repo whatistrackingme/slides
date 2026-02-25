@@ -8,7 +8,7 @@
     <div class="absolute inset-0 pointer-events-none hero-grid" />
     <!-- Content -->
     <div class="relative z-10 w-full h-full flex flex-col items-center justify-center text-center px-8">
-      <h1 class="text-7xl font-extrabold tracking-wider leading-tight hero-fade-in hero-title">
+      <h1 class="text-7xl font-extrabold tracking-wider leading-tight hero-fade-in hero-title text-primary">
         {{ title }}
       </h1>
       <p v-if="subtitle" class="absolute bottom-10 text-xl tracking-wide hero-fade-in hero-subtitle">
@@ -50,11 +50,9 @@ defineProps<{
   opacity: 0.06;
 }
 .hero-title {
-  color: var(--witm-accent);
   font-family: var(--witm-font-display);
 }
 .hero-subtitle {
-  color: var(--witm-text);
   font-family: var(--witm-font-body);
   animation-delay: 0.15s;
 }

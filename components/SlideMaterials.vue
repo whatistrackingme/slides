@@ -154,12 +154,10 @@ onMounted(() => {
 
 .material-name {
   font-family: var(--witm-font-display);
-  color: var(--witm-accent);
 }
 
 .material-full-name {
   font-family: var(--witm-font-body);
-  color: var(--witm-subtext0);
 }
 
 .molecule-container {
@@ -170,12 +168,10 @@ onMounted(() => {
 
 .prop-label {
   font-family: var(--witm-font-body);
-  color: var(--witm-subtext0);
 }
 
 .prop-value {
   font-family: var(--witm-font-body);
-  color: var(--witm-text);
   font-weight: 500;
 }
 </style>
