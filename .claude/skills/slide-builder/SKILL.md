@@ -6,7 +6,7 @@ allowed-tools: Read, Edit, Bash
 
 # Slide Builder
 
-Interactive skill for creating the WhatIsTrackingMe presentation using research-backed design principles. This skill ensures every slide follows proven effectiveness patterns: one meaningful image, minimal text, assertion-evidence format, and progressive storytelling.
+Interactive skill for creating the WhatIsTracking.Me presentation using research-backed design principles. This skill ensures every slide follows proven effectiveness patterns: one meaningful image, minimal text, assertion-evidence format, and progressive storytelling.
 
 ## Research-Backed Principles
 
@@ -41,7 +41,7 @@ This skill implements findings from TED talks, cognitive science, and technical 
 ### Narrative Approach
 The presentation follows a **top-down** structure:
 1. **Hook & Context** — Grab attention, establish the problem
-2. **Solution Overview** — Introduce WhatIsTrackingMe and how it works at a high level
+2. **Solution Overview** — Introduce WhatIsTracking.Me and how it works at a high level
 3. **Use Cases & Demo** — Show why it matters and see it in action
 4. **Technical Deep-Dive** — Drill into backend, frontend, and hardware details
 5. **Insights & Closing** — What we discovered, bigger picture, call to action
@@ -183,7 +183,7 @@ Priority: Add "Current State of Affairs" slide (provides context for problem)
 ```
 Slide 5: QR Code Analysis Component
 
-Assertion: "WhatIsTrackingMe intercepts QR scans before tracking begins"
+Assertion: "WhatIsTracking.Me intercepts QR scans before tracking begins"
 
 Suggested image prompt:
 "Technical diagram showing QR code scanner with interception layer highlighting data extraction, clean architecture style, blue and white"
@@ -263,7 +263,7 @@ Avoid:
 **Problem-Struggle-Solution Arc:**
 1. **Problem:** Invisible tracking, privacy gap
 2. **Struggle:** Journey from physical to digital without awareness
-3. **Solution:** WhatIsTrackingMe makes it visible
+3. **Solution:** WhatIsTracking.Me makes it visible
 
 **Emotional Connection:**
 - Use first person: "When you scan..."

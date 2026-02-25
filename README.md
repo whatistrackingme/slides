@@ -1,6 +1,6 @@
-# What is Tracking ME? - Presentation
+# WhatIsTracking.Me - Presentation
 
-A 20-minute presentation about the WhatIsTrackingMe privacy awareness project, built with [Slidev](https://sli.dev/).
+A 20-minute presentation about the WhatIsTracking.Me privacy awareness project, built with [Slidev](https://sli.dev/).
 
 ## Quick Start for Contributors
 
@@ -191,7 +191,7 @@ npm run dev:stop && npm run dev:pm2
 - [Slidev Documentation](https://sli.dev/)
 - [Slidev Theme Gallery](https://sli.dev/themes/gallery.html)
 - [Markdown Guide](https://www.markdownguide.org/)
-- [WhatIsTrackingMe Project](https://github.com/whatistrackingme)
+- [WhatIsTracking.Me Project](https://github.com/whatistrackingme)
 
 ## License
 

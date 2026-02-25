@@ -1,8 +1,8 @@
-# Claude Code Notes - WhatIsTrackingMe Slides
+# Claude Code Notes - WhatIsTracking.Me Slides
 
 ## Project Overview
 
-This is a Slidev presentation about the WhatIsTrackingMe privacy awareness project. The presentation is designed to be given in 20 minutes and explains how the project helps people understand digital tracking of their real-world presence.
+This is a Slidev presentation about the WhatIsTracking.Me privacy awareness project. The presentation is designed to be given in 20 minutes and explains how the project helps people understand digital tracking of their real-world presence.
 
 ## Repository Structure
 
@@ -68,7 +68,7 @@ Images are saved to `public/images/` and ready to use in slides.
 
 ## Related Project
 
-The presentation is about the [WhatIsTrackingMe POC](https://github.com/whatistrackingme/poc) - a privacy awareness tool where users wear QR codes to track how their real-world presence is captured digitally.
+The presentation is about the [WhatIsTracking.Me POC](https://github.com/whatistrackingme/poc) - a privacy awareness tool where users wear QR codes to track how their real-world presence is captured digitally.
 
 **Key concepts to cover:**
 - Current state: AI-powered tracking, surveillance capitalism
