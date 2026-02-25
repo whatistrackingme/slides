@@ -201,7 +201,7 @@ title: WhatIsTracking.Me
 
 ---
 
-<SlideImage overlay="Client Side" :images="[
+<SlideImage overlay="Client Side" subtitle="Your Keys, Your Data" :images="[
   '/images/generated_2026-02-10T08-41-55_laptop_and_smartphone_showing_a_privacy_dashboard_.png',
 ]" />
 
