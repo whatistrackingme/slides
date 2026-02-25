@@ -309,7 +309,7 @@ title: WhatIsTracking.Me
   'Internationalization (i18n)',
   'GeoIP country-code on interactions',
   'Location heatmaps over time',
-]" size="sm" spacing="tight" />
+]" />
 
 ---
 
@@ -348,6 +348,7 @@ title: WhatIsTracking.Me
 ---
 
 <div class="absolute inset-0 flex flex-col items-center justify-center px-16" style="background: var(--witm-base)">
+  <p class="absolute top-12 text-lg text-primary">This presentation was made possible by...</p>
   <div class="grid grid-cols-4 gap-x-20 gap-y-14">
     <div class="flex flex-col items-center gap-4">
       <simple-icons-claude class="text-5xl" />
@@ -382,7 +383,6 @@ title: WhatIsTracking.Me
       <span class="text-sm">TypeScript</span>
     </div>
   </div>
-  <p class="absolute bottom-12 text-lg">This presentation was vibe coded end-to-end</p>
 </div>
 
 <!--
@@ -410,7 +410,7 @@ title: WhatIsTracking.Me
   'Should physical spaces have the same consent models as cookies?',
   'How do we make tracking visible without normalizing it?',
   'What role should open source play in privacy tools?',
-]" size="base" spacing="loose" />
+]" />
 
 <!--
 - "Privacy is not about having something to hide. It is about having the right to choose what you share." — Edward Snowden
