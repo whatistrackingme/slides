@@ -38,7 +38,6 @@ defineProps<{
 .slide-heading {
   font-family: var(--witm-font-display);
   color: var(--witm-accent);
-  text-transform: uppercase;
   letter-spacing: 0.04em;
 }
 .slide-icon {

@@ -65,6 +65,7 @@
     />
     <div v-if="overlay && !hasSlot" class="absolute inset-0 z-30 pointer-events-none">
       <p class="overlay-text">{{ overlay }}</p>
+      <p v-if="subtitle" class="overlay-subtitle">{{ subtitle }}</p>
     </div>
 
     <!-- Slot for fully custom overlay content -->
@@ -91,6 +92,7 @@ const props = defineProps<{
   images: ImageItem[]
   columns?: number
   overlay?: string
+  subtitle?: string
 }>()
 
 const slots = useSlots()
@@ -178,7 +180,7 @@ const displayImages = computed<NormalizedImage[]>(() => {
 }
 
 .overlay-vignette {
-  background: radial-gradient(ellipse at top right, rgba(0, 0, 0, 0.75) 0%, transparent 70%);
+  background: radial-gradient(ellipse at top right, rgba(0, 0, 0, 0.85) 0%, transparent 70%);
 }
 
 .overlay-text {
@@ -190,6 +192,20 @@ const displayImages = computed<NormalizedImage[]>(() => {
   font-size: 3rem;
   line-height: 1.4;
   font-weight: 700;
+  color: white;
+  letter-spacing: 0.025em;
+  text-align: right;
+}
+
+.overlay-subtitle {
+  position: absolute;
+  top: 6.5rem;
+  right: 2.5rem;
+  max-width: 80%;
+  font-family: var(--slidev-theme-font-sans, 'Space Grotesk Variable', sans-serif);
+  font-size: 2rem;
+  line-height: 1.4;
+  font-weight: 400;
   color: white;
   letter-spacing: 0.025em;
   text-align: right;

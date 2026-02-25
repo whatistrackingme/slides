@@ -14,10 +14,10 @@
           />
           <!-- Text content -->
           <div class="flex flex-col min-w-0 flex-1">
-            <p class="material-name text-3xl font-bold uppercase tracking-wider leading-none">
+            <p class="material-name text-3xl font-bold uppercase tracking-wider leading-none !mb-0 !pb-0">
               {{ mat.name }}
             </p>
-            <p class="material-full-name text-sm mb-3">{{ mat.fullName }}</p>
+            <p class="material-full-name text-sm !mt-0 mb-3">{{ mat.fullName }}</p>
             <div class="space-y-0.5 text-sm">
               <div v-for="prop in mat.props" :key="prop.label" class="flex justify-between gap-2">
                 <span class="prop-label whitespace-nowrap">{{ prop.label }}</span>
