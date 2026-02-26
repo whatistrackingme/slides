@@ -35,7 +35,7 @@ title: WhatIsTracking.Me
 
 ---
 
-<SlideBullets title="Agenda" :items="[
+<SlideBullets :items="[
   { bold: 'What', text: '— The invisible data trail we leave behind' },
   { bold: 'How', text: '— WITM architecture and hardware' },
   { bold: 'Why', text: '— Information symmetry and the right to choose' },

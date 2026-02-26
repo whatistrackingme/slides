@@ -79,14 +79,7 @@
 
       <!-- Diagonal connector (spans all columns) -->
       <div class="diagonal-row hero-fade-in" style="animation-delay: 0.4s">
-        <svg viewBox="0 0 580 22" class="w-full h-full" fill="none"
-             xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-          <path d="M 312 2 L 268 20"
-                stroke="var(--witm-accent)" stroke-width="2.5" stroke-dasharray="8 5"
-                fill="none" opacity="0.5"
-                vector-effect="non-scaling-stroke" />
-          <polygon points="264,16 274,21 263,22" fill="var(--witm-accent)" opacity="0.7" />
-        </svg>
+        <div class="diagonal-arrow" />
       </div>
 
       <!-- Q3 -->
@@ -231,6 +224,31 @@ const cornersDotOpts = { type: 'dot', color: '#cdddd2' }
   grid-row: 2;
   display: flex;
   align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.diagonal-arrow {
+  display: flex;
+  align-items: center;
+  transform: rotate(135deg);
+}
+
+.diagonal-arrow::before {
+  content: '';
+  flex: 1;
+  width: 4.5rem;
+  border-top: 2.5px dashed var(--witm-accent);
+  opacity: 0.5;
+}
+
+.diagonal-arrow::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 8px solid rgba(166, 227, 161, 0.7);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
 }
 
 /* ── Quadrant cards ── */
