@@ -42,8 +42,8 @@ defineProps<{
   position: absolute;
   width: 42rem;
   height: 42rem;
-  left: -10rem;
-  top: -10rem;
+  left: -6rem;
+  top: -8rem;
   opacity: 0.06;
   z-index: 0;
   pointer-events: none;

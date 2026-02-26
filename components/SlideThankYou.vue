@@ -2,7 +2,7 @@
   <div class="absolute inset-0 flex thank-bg">
     <!-- Left side: text + GitHub + arrow -->
     <div class="w-1/2 flex flex-col items-center justify-center px-12 relative">
-      <h1 class="thank-title hero-fade-in">Thank you</h1>
+      <h1 class="thank-title hero-fade-in">Thank You!</h1>
 
       <div class="flex items-center gap-5 mt-12 hero-fade-in" style="animation-delay: 0.2s">
         <carbon-logo-github class="thank-github-icon" />
@@ -13,7 +13,7 @@
       </div>
 
       <p class="thank-caption hero-fade-in" style="animation-delay: 0.35s">
-        This one won't track you
+        This one won't track you*
       </p>
     </div>
 
@@ -70,7 +70,7 @@ const cornersDotOpts = {
 
 .thank-title {
   font-family: var(--witm-font-display);
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   font-weight: 800;
   letter-spacing: 0.03em;
 }

@@ -192,7 +192,7 @@ onMounted(() => {
   timer = setInterval(() => {
     qrData.value = crypto.randomUUID()
     currentTime.value = formatTime()
-  }, 1000)
+  }, 5000)
 })
 
 onUnmounted(() => {
