@@ -1,6 +1,8 @@
 ---
 theme: default
 highlighter: shiki
+shiki:
+  theme: catppuccin-mocha
 lineNumbers: false
 fonts:
   provider: none
@@ -23,15 +25,25 @@ title: WhatIsTracking.Me
 
 ---
 
+<SlideQuote quote="The most dangerous thing about surveillance is that we stop noticing it." author="Cory Doctorow" />
+
+<!--
+- Let the quote sink in — pause here
+- Cory Doctorow also coined the term "enshittification"
+- Privacy is a right, not a privilege
+-->
+
+---
+
 <SlideBullets title="Agenda" :items="[
-  'A 20-minute talk about invisible surveillance',
-  'You will participate — phones ready',
-  'By the end, you will see tracking differently',
+  { bold: 'What', text: '— The invisible data trail we leave behind' },
+  { bold: 'How', text: '— WITM architecture and hardware' },
+  { bold: 'Why', text: '— Information symmetry and the right to choose' },
 ]" />
 
 <!--
-- Frame the talk: short, interactive, perspective-shifting
-- Three parts: What? How? Why?
+- Three parts: What is happening, How we built a solution, Why it matters
+- 20 minutes, interactive — phones ready
 -->
 
 ---
@@ -95,22 +107,6 @@ title: WhatIsTracking.Me
 
 ---
 
-<SlideImage overlay="The Problem" subtitle="A Global Dragnet?" :images="[
-  '/images/generated_2026-02-25T04-42-01_a_dark_omniscient_surveillance_concept_a_massive_t.png',
-]" />
-
-<!--
-- Every QR scan shares your location, device, and identity
-- Most people never see the data trail they leave behind
-- No regulation requires disclosure of scan data collection
-- Your offline behavior is being digitized without consent
-- 2.5 billion QR scans expected worldwide in 2026
-- Menus, payments, check-ins — all silently logged
-- Physical spaces are becoming digital surveillance zones
--->
-
----
-
 <SlideImage overlay="Your Face is a QR Code" :images="[
   '/images/generated_2026-02-25T07-16-11_trippy_close_up_portrait_of_a_person_whose_face_mo.png',
 ]" />
@@ -119,6 +115,7 @@ title: WhatIsTracking.Me
 - Every scan turns your presence into data
 - Your face, your location, your habits — encoded and tracked
 - In the digital world, you are already a QR code
+- More on this later
 -->
 
 ---
@@ -174,29 +171,28 @@ title: WhatIsTracking.Me
 
 ---
 
-<SlideImage :images="['/images/generated_2026-02-18_stylized_idea_diagram.png']" />
+<SlideDockerCompose />
 
 <!--
-- Ed25519 key pair generated on your device at setup
-- Server stores only ciphertext — never plaintext
-- Decryption happens exclusively on the client
-- Zero-knowledge design: we cannot read your data, even if compelled
+- Five services: interactsh-server, interactsh-client, PostgreSQL, Rust backend, frontend
+- Interactsh handles out-of-band interaction capture via DNS, HTTP, SMTP
+- Rust + Axum backend with encrypted PostgreSQL payloads
+- Stateless API — no sessions, no cookies, no tracking irony
+- CORS disabled in production, no dev-only flags
 -->
 
 ---
 
-<SlideImage overlay="Server Side" :images="[
-  '/images/generated_2026-02-10T08-57-00_a_sequence_diagram_showing_the_flow_between_four_e.png',
-  '/images/generated_2026-02-18T00-46-51_glowing_pipeline_of_encrypted_data_packets_moving_.png',
-  '/images/generated_2026-02-18T00-46-53_abstract_representation_of_encrypted_data_flowing_.png',
-  '/images/generated_2026-02-18T00-46-55_visualization_of_an_api_request_flowing_through_mi.png',
-]" />
+<div class="absolute inset-0 flex items-center justify-center p-8" style="background: var(--witm-base)">
+  <img src="/images/interactsh-extension.png" class="max-w-full max-h-full object-contain" />
+</div>
 
 <!--
-- Rust + Axum for type-safe, high-performance API
-- PostgreSQL with encrypted payloads — no plaintext columns
-- Push notifications via Web Push protocol
-- Stateless API — no sessions, no cookies, no tracking irony
+- Interactsh: open-source OOB interaction gathering tool by ProjectDiscovery
+- Captures DNS, HTTP, and SMTP callbacks from QR code scans
+- We use it as the core of our "collector" pipeline
+- Our fork adds encrypted payload forwarding to the backend
+- All interaction data is pseudoanonymous — purged after client retrieval
 -->
 
 ---
@@ -232,7 +228,7 @@ title: WhatIsTracking.Me
 
 ---
 
-<SlideImage overlay="Solution: E-Ink Display" :images="[
+<SlideImage overlay="E-Ink Display" :images="[
   '/images/generated_2026-02-25T05-42-46_person_from_behind_wearing_a_backpack_with_a_large_prominent.png',
 ]" />
 
@@ -247,7 +243,19 @@ title: WhatIsTracking.Me
 
 ---
 
-<SlideImage overlay="New Problem: Rain" :images="[
+<SlideImage overlay="Inkplate 10" subtitle="by Crowd Supply" :images="[
+  '/images/inkplate-10-crowdsupply.jpg',
+]" />
+
+<!--
+- Inkplate 10: 9.7-inch e-paper display with ESP32
+- Open-source hardware, Arduino-compatible
+- Available on Crowd Supply
+-->
+
+---
+
+<SlideImage :images="[
   '/images/generated_2026-02-25T05-47-59_person_from_behind_wearing_a_backpack_with_a_large_e_ink_qr.png',
 ]" />
 
@@ -267,26 +275,14 @@ title: WhatIsTracking.Me
   :wireframe="true"
 />
 
+<div class="absolute top-8 left-0 right-0 text-center z-10">
+  <h2 class="text-2xl font-bold" style="color: var(--witm-text); font-family: var(--witm-font-display)">Bespoke ASA & TPU Hopefully Waterproof Megacase</h2>
+</div>
+
 <!--
 - 3D model preview of our open-source tracker design
 - Printable on any consumer FDM printer
 - All hardware files available on GitHub
--->
-
----
-
-<SlideImage overlay="Print Your Own Tracker" :images="[
-  '/images/generated_2026-02-10T08-41-58_3d_printer_creating_a_small_wearable_badge_with_a_.png',
-  '/images/generated_2026-02-18T00-47-29_collection_of_freshly_3d_printed_qr_code_badges_an.png',
-  '/images/generated_2026-02-18T00-47-30_close_up_of_a_3d_printer_extruder_head_printing_a_.png',
-  '/images/generated_2026-02-18T00-47-33_3d_printer_in_action_creating_a_small_geometric_we.png',
-]" />
-
-<!--
-- Open hardware designs — 3D-printable badge and lanyard clips
-- E-ink displays (Inkplate) for dynamic QR codes
-- Works with any standard QR code printed on any material
-- Print one tonight with a home 3D printer
 -->
 
 ---
@@ -299,16 +295,25 @@ title: WhatIsTracking.Me
 
 ---
 
+<div class="absolute inset-0 flex items-center justify-center" style="background: var(--witm-base)">
+  <p class="text-3xl opacity-30" style="font-family: var(--witm-font-display)">[ insert photo of case here ]</p>
+</div>
+
+---
+
 <SlideColumns title="TODOs" :items="[
   { text: 'Tauri Native apps with background location', highlight: true },
-  { text: 'More efficient QR encoding', highlight: true },
+  'More efficient QR encoding',
   'NFC & Bluetooth beacon support',
-  { text: 'Fingerprinting', highlight: true },
+  'Fingerprinting',
   'Timescale filtering on dashboard',
   'Reverse geocoding for location history',
   'Internationalization (i18n)',
   'GeoIP country-code on interactions',
   'Location heatmaps over time',
+  'Add onboarding to the app itself',
+  'MagSafe mount, case improvements',
+  'More self-hosting options',
 ]" />
 
 ---
@@ -321,7 +326,38 @@ title: WhatIsTracking.Me
 
 ---
 
-<SlideImage overlay="Mapping the Tracking" :images="[
+<SlideImage overlay="Our Panopticon" subtitle="Big Brother is Watching You" :images="[
+  '/images/generated_2026-02-26T14-32-30_digital_panopticon.png',
+]" />
+
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-50 bg-black/70 backdrop-blur-sm px-5 py-2 rounded-full" style="pointer-events: auto">
+  <span class="text-lg text-white/80">Learn more @ </span><a href="https://en.wikipedia.org/wiki/Panopticon" target="_blank" class="text-lg text-white/80 !no-underline !border-none" style="text-decoration: none !important">wikipedia.org/wiki/Panopticon</a>
+</div>
+
+<!--
+- Designed by Jeremy Bentham in 1791 — a circular prison where a single guard can observe all inmates without them knowing if they're being watched
+- The power comes not from constant surveillance, but from the possibility of it — inmates self-regulate their behaviour
+- Michel Foucault used it as a metaphor for modern disciplinary societies
+- The internet is the ultimate panopticon — we are always potentially observed, and we change our behaviour accordingly
+- WhatIsTracking.Me flips this: instead of being the watched, you become the watcher
+-->
+
+---
+
+<div class="absolute inset-0 flex items-center justify-center p-6" style="background: #ffffff">
+  <img src="/images/panoptacon.png" class="max-w-full max-h-full object-contain" />
+  <a href="https://www.irishlegal.com/articles/uk-home-secretary-dreams-of-ai-powered-panopticon" target="_blank" class="absolute bottom-4 right-4 text-sm text-black/60 !no-underline !border-none" style="text-decoration: none !important; pointer-events: auto">irishlegal.com/articles/uk-home-secretary-dreams-of-ai-powered-panopticon</a>
+</div>
+
+<!--
+- UK Home Secretary openly described her vision of an AI-powered panopticon — constant state surveillance using technology
+- This isn't science fiction — governments are actively pursuing total surveillance
+- Source: irishlegal.com/articles/uk-home-secretary-dreams-of-ai-powered-panopticon
+-->
+
+---
+
+<SlideImage overlay="Mapping the Tracking" subtitle="What we found wearing QR codes in public" :images="[
   '/images/generated_2026-02-18T00-48-05_abstract_heatmap_visualization_showing_dense_clust.png',
 ]" />
 
@@ -334,7 +370,13 @@ title: WhatIsTracking.Me
 
 ---
 
-<SlideImage overlay="Freedom to Choose" :images="[
+<div class="absolute inset-0 flex items-center justify-center" style="background: var(--witm-base)">
+  <p class="text-3xl opacity-30" style="font-family: var(--witm-font-display)">[ insert real captures here ]</p>
+</div>
+
+---
+
+<SlideImage overlay="Information Symmetry" subtitle="The freedom to make an informed choice" :images="[
   '/images/generated_2026-02-25T05-22-14_person_standing_at_a_fork_in_the_road_between_two_convenienc.png',
 ]" />
 
@@ -343,6 +385,7 @@ title: WhatIsTracking.Me
 - One path: open, transparent, user-controlled
 - Other path: surveillance, control, no consent
 - WhatIsTracking.Me gives you the power to choose
+- Nothing to hide, nothing to fear — sign off
 -->
 
 ---
@@ -351,24 +394,16 @@ title: WhatIsTracking.Me
   <p class="absolute top-12 text-lg text-primary">This presentation was made possible by...</p>
   <div class="grid grid-cols-4 gap-x-20 gap-y-14">
     <div class="flex flex-col items-center gap-4">
-      <simple-icons-claude class="text-5xl" />
-      <span class="text-sm">Claude Code</span>
-    </div>
-    <div class="flex flex-col items-center gap-4">
-      <simple-icons-googlegemini class="text-5xl" />
-      <span class="text-sm">Gemini Imagen</span>
-    </div>
-    <div class="flex flex-col items-center gap-4">
-      <simple-icons-threedotjs class="text-5xl" />
-      <span class="text-sm">Three.js</span>
+      <carbon-presentation-file class="text-5xl" />
+      <span class="text-sm">Slidev</span>
     </div>
     <div class="flex flex-col items-center gap-4">
       <carbon-chemistry class="text-5xl" />
       <span class="text-sm">SMILES Drawer</span>
     </div>
     <div class="flex flex-col items-center gap-4">
-      <carbon-presentation-file class="text-5xl" />
-      <span class="text-sm">Slidev</span>
+      <simple-icons-threedotjs class="text-5xl" />
+      <span class="text-sm">Three.js</span>
     </div>
     <div class="flex flex-col items-center gap-4">
       <simple-icons-vuedotjs class="text-5xl" />
@@ -382,7 +417,16 @@ title: WhatIsTracking.Me
       <simple-icons-typescript class="text-5xl" />
       <span class="text-sm">TypeScript</span>
     </div>
+    <div class="flex flex-col items-center gap-4">
+      <simple-icons-claude class="text-5xl" />
+      <span class="text-sm">Claude Code</span>
+    </div>
+    <div class="flex flex-col items-center gap-4">
+      <simple-icons-googlegemini class="text-5xl" />
+      <span class="text-sm">Gemini Imagen</span>
+    </div>
   </div>
+  <p class="absolute bottom-12 text-lg text-primary italic">...and vibe-coded end-to-end!</p>
 </div>
 
 <!--
