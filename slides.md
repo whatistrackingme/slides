@@ -93,6 +93,19 @@ title: WhatIsTracking.Me
 
 ---
 
+<SlideImage overlay="Your Face is a QR Code" :images="[
+  '/images/generated_2026-02-25T07-16-11_trippy_close_up_portrait_of_a_person_whose_face_mo.png',
+]" />
+
+<!--
+- Every scan turns your presence into data
+- Your face, your location, your habits — encoded and tracked
+- In the digital world, you are already a QR code
+- More on this later
+-->
+
+---
+
 <a href="https://app.staging.whatistracking.me/scans" target="_blank" class="absolute top-4 right-4 z-10 text-white !no-underline !border-none" style="pointer-events: auto; text-decoration: none !important;">
   <carbon-launch class="text-lg" />
 </a>
@@ -107,20 +120,15 @@ title: WhatIsTracking.Me
 
 ---
 
-<SlideImage overlay="Your Face is a QR Code" :images="[
-  '/images/generated_2026-02-25T07-16-11_trippy_close_up_portrait_of_a_person_whose_face_mo.png',
-]" />
+<SlideSection title="How?" />
 
 <!--
-- Every scan turns your presence into data
-- Your face, your location, your habits — encoded and tracked
-- In the digital world, you are already a QR code
-- More on this later
+- Section 2: How does WhatIsTracking.Me work under the hood?
 -->
 
 ---
 
-<SlideImage overlay="Our Solution" subtitle="Track the Trackers" :images="[
+<SlideImage overlay="Our Experiment" subtitle="Tracking the Trackers" :images="[
   '/images/generated_2026-02-18T00-27-59_person_with_backpack_tablet_qr_code_walking_city_bridge.png',
 ]" />
 
@@ -129,14 +137,6 @@ title: WhatIsTracking.Me
 - Wear a QR code badge in public
 - Every scan triggers a notification to your phone
 - You become the observer of your own surveillance
--->
-
----
-
-<SlideSection title="How?" />
-
-<!--
-- Section 2: How does WhatIsTracking.Me work under the hood?
 -->
 
 ---
@@ -167,45 +167,6 @@ title: WhatIsTracking.Me
 - Server never sees plaintext — only ciphertext passes through
 - Push notification carries encrypted payload, not raw data
 - Decryption is exclusively client-side
--->
-
----
-
-<SlideDockerCompose />
-
-<!--
-- Five services: interactsh-server, interactsh-client, PostgreSQL, Rust backend, frontend
-- Interactsh handles out-of-band interaction capture via DNS, HTTP, SMTP
-- Rust + Axum backend with encrypted PostgreSQL payloads
-- Stateless API — no sessions, no cookies, no tracking irony
-- CORS disabled in production, no dev-only flags
--->
-
----
-
-<div class="absolute inset-0 flex items-center justify-center p-8" style="background: var(--witm-base)">
-  <img src="/images/interactsh-extension.png" class="max-w-full max-h-full object-contain" />
-</div>
-
-<!--
-- Interactsh: open-source OOB interaction gathering tool by ProjectDiscovery
-- Captures DNS, HTTP, and SMTP callbacks from QR code scans
-- We use it as the core of our "collector" pipeline
-- Our fork adds encrypted payload forwarding to the backend
-- All interaction data is pseudoanonymous — purged after client retrieval
--->
-
----
-
-<SlideImage overlay="Client Side" subtitle="Your Keys, Your Data" :images="[
-  '/images/generated_2026-02-10T08-41-55_laptop_and_smartphone_showing_a_privacy_dashboard_.png',
-]" />
-
-<!--
-- Tauri desktop app — your private key never leaves your machine
-- Progressive web app for mobile — works offline
-- Client-side decryption of all scan events
-- Export your data anytime — full ownership, no lock-in
 -->
 
 ---
@@ -301,7 +262,7 @@ title: WhatIsTracking.Me
 
 ---
 
-<SlideColumns title="TODOs" :items="[
+<SlideColumns title="Technical TODOs" :items="[
   { text: 'Tauri Native apps with background location', highlight: true },
   'More efficient QR encoding',
   'NFC & Bluetooth beacon support',
@@ -314,6 +275,11 @@ title: WhatIsTracking.Me
   'Add onboarding to the app itself',
   'MagSafe mount, case improvements',
   'More self-hosting options',
+  'RWIR - ReWrite in Rust',
+  'Collector obfuscation (legit-looking random domains)',
+  'Simple Terms of Service',
+  'E2E encryption for interactions',
+  'Energy saver mode',
 ]" />
 
 ---
@@ -353,6 +319,7 @@ title: WhatIsTracking.Me
 - UK Home Secretary openly described her vision of an AI-powered panopticon — constant state surveillance using technology
 - This isn't science fiction — governments are actively pursuing total surveillance
 - Source: irishlegal.com/articles/uk-home-secretary-dreams-of-ai-powered-panopticon
+- TODO: fix this slide — replace with a better newspaper clipping or screenshot
 -->
 
 ---
@@ -386,51 +353,14 @@ title: WhatIsTracking.Me
 - Other path: surveillance, control, no consent
 - WhatIsTracking.Me gives you the power to choose
 - Nothing to hide, nothing to fear — sign off
--->
-
----
-
-<div class="absolute inset-0 flex flex-col items-center justify-center px-16" style="background: var(--witm-base)">
-  <p class="absolute top-12 text-lg text-primary">This presentation was made possible by...</p>
-  <div class="grid grid-cols-4 gap-x-20 gap-y-14">
-    <div class="flex flex-col items-center gap-4">
-      <carbon-presentation-file class="text-5xl" />
-      <span class="text-sm">Slidev</span>
-    </div>
-    <div class="flex flex-col items-center gap-4">
-      <carbon-chemistry class="text-5xl" />
-      <span class="text-sm">SMILES Drawer</span>
-    </div>
-    <div class="flex flex-col items-center gap-4">
-      <simple-icons-threedotjs class="text-5xl" />
-      <span class="text-sm">Three.js</span>
-    </div>
-    <div class="flex flex-col items-center gap-4">
-      <simple-icons-vuedotjs class="text-5xl" />
-      <span class="text-sm">Vue 3</span>
-    </div>
-    <div class="flex flex-col items-center gap-4">
-      <simple-icons-vite class="text-5xl" />
-      <span class="text-sm">Vite</span>
-    </div>
-    <div class="flex flex-col items-center gap-4">
-      <simple-icons-typescript class="text-5xl" />
-      <span class="text-sm">TypeScript</span>
-    </div>
-    <div class="flex flex-col items-center gap-4">
-      <simple-icons-claude class="text-5xl" />
-      <span class="text-sm">Claude Code</span>
-    </div>
-    <div class="flex flex-col items-center gap-4">
-      <simple-icons-googlegemini class="text-5xl" />
-      <span class="text-sm">Gemini Imagen</span>
-    </div>
-  </div>
-  <p class="absolute bottom-12 text-lg text-primary italic">...and vibe-coded end-to-end!</p>
-</div>
-
-<!--
-- Meta moment: even this talk was vibe coded — Claude Code, Slidev, Gemini, and GitHub Actions
+- Research novel insights from real-world tracking data
+- Getting a dataset to influence regulations and learn from real data
+- To see if your images have gone viral online
+- To see how different jurisdictions and businesses respect your privacy
+- Understanding the technologies tracking people and the insights they reveal
+- We are not against AI or technology — we want to understand it
+- Some have concerns, and those concerns deserve data
+- Raising awareness is a core objective — does anyone still care?
 -->
 
 ---
@@ -454,6 +384,8 @@ title: WhatIsTracking.Me
   'Should physical spaces have the same consent models as cookies?',
   'How do we make tracking visible without normalizing it?',
   'What role should open source play in privacy tools?',
+  'Can the law keep up with technology?',
+  'Should someone own a photo of you walking around in public?',
 ]" />
 
 <!--
