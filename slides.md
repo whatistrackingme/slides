@@ -247,6 +247,17 @@ title: WhatIsTracking.Me
 
 ---
 
+<div class="absolute inset-0 flex items-center justify-center p-6" style="background: #54545a">
+  <img src="/images/slicer_screenshot.png" class="max-h-full max-w-full object-contain" />
+</div>
+
+<!--
+- BambuStudio slicer view showing all 4 print plates
+- Top-left: TPU gaskets, top-right: small ASA parts, bottom: main case halves
+-->
+
+---
+
 <SlideMaterials />
 
 <!--
