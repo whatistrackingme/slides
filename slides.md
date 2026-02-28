@@ -171,19 +171,30 @@ title: WhatIsTracking.Me
 
 ---
 
-<SlideImage :images="[
-  { src: '/images/generated_2026-02-10T08-53-46_a_crowded_conference_hall_from_above_at_night_atte.png', label: 'London' },
-  { src: '/images/generated_2026-02-18T00-46-34_birds_eye_view_of_a_crowded_event_space_at_night_w.png', label: 'Bangkok' },
-  { src: '/images/generated_2026-02-18T00-46-35_overhead_shot_of_people_walking_through_a_conventi.png', label: 'Hong Kong' },
-  { src: '/images/generated_2026-02-18T00-46-37_wide_angle_view_of_a_packed_auditorium_from_the_ba.png', label: 'Osaka' },
-]" />
+<div class="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-4 p-4" style="background: var(--witm-base)">
+  <div class="relative rounded-3xl overflow-hidden">
+    <iframe src="https://app.staging.whatistracking.me/map?loc=22.307%2C114.166%2C22.315%2C114.174&fullscreen=1" class="w-full h-full border-none" />
+    <span class="absolute bottom-2 right-2 bg-black/70 text-lg font-bold px-3 py-1.5 rounded" style="color: #a6e3a1">Hong Kong</span>
+  </div>
+  <div class="relative rounded-3xl overflow-hidden">
+    <iframe src="https://app.staging.whatistracking.me/map?loc=34.667%2C135.492%2C34.697%2C135.508&fullscreen=1" class="w-full h-full border-none" />
+    <span class="absolute bottom-2 right-2 bg-black/70 text-lg font-bold px-3 py-1.5 rounded" style="color: #a6e3a1">Osaka</span>
+  </div>
+  <div class="relative rounded-3xl overflow-hidden">
+    <iframe src="https://app.staging.whatistracking.me/map?loc=18.781%2C98.967%2C18.803%2C98.995&fullscreen=1" class="w-full h-full border-none" />
+    <span class="absolute bottom-2 right-2 bg-black/70 text-lg font-bold px-3 py-1.5 rounded" style="color: #a6e3a1">Chiang Mai</span>
+  </div>
+  <div class="relative rounded-3xl overflow-hidden">
+    <iframe src="https://app.staging.whatistracking.me/map?loc=51.5295%2C-0.148%2C51.5405%2C-0.134&fullscreen=1" class="w-full h-full border-none" />
+    <span class="absolute bottom-2 right-2 bg-black/70 text-lg font-bold px-3 py-1.5 rounded" style="color: #a6e3a1">London</span>
+  </div>
+</div>
 
 <!--
-- Walked around the city with a phone displaying a QR code
+- Live maps showing real scan data from four cities
+- Walked around with a phone displaying a QR code
 - Practical concern: a phone screen is small and hard to scan
 - Tested at conferences, cafes, and on public transit
-- Show our travels, walking around with a phone and real examples
-- Explain practical concerns of using a phone (it's small)
 - Transition into the e-ink solution
 -->
 
@@ -266,6 +277,16 @@ title: WhatIsTracking.Me
 
 ---
 
+<div class="absolute inset-0" style="background: var(--witm-base)">
+  <img src="/images/printing.jpg" class="w-full h-full object-cover" />
+</div>
+
+<!--
+- 3D printing in progress
+-->
+
+---
+
 <div class="absolute inset-0 flex items-center justify-center" style="background: var(--witm-base)">
   <p class="text-3xl opacity-30" style="font-family: var(--witm-font-display)">[ insert photo of case here ]</p>
 </div>
@@ -276,7 +297,7 @@ title: WhatIsTracking.Me
   { text: 'Tauri Native apps with background location', highlight: true },
   'More efficient QR encoding',
   'NFC & Bluetooth beacon support',
-  'Fingerprinting',
+  { text: 'Fingerprinting', highlight: true },
   'Timescale filtering on dashboard',
   'Reverse geocoding for location history',
   'Internationalization (i18n)',
@@ -287,9 +308,9 @@ title: WhatIsTracking.Me
   'More self-hosting options',
   'RWIR - ReWrite in Rust',
   'Collector obfuscation (legit-looking random domains)',
-  'Simple Terms of Service',
   'E2E encryption for interactions',
   'Energy saver mode',
+  'Backlight e-ink display for night mode',
 ]" />
 
 ---
@@ -302,13 +323,7 @@ title: WhatIsTracking.Me
 
 ---
 
-<SlideImage overlay="Our Panopticon" subtitle="Big Brother is Watching You" :images="[
-  '/images/generated_2026-02-26T14-32-30_digital_panopticon.png',
-]" />
-
-<div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-50 bg-black/70 backdrop-blur-sm px-5 py-2 rounded-full" style="pointer-events: auto">
-  <span class="text-lg text-white/80">Learn more @ </span><a href="https://en.wikipedia.org/wiki/Panopticon" target="_blank" class="text-lg text-white/80 !no-underline !border-none" style="text-decoration: none !important">wikipedia.org/wiki/Panopticon</a>
-</div>
+<iframe src="https://en.wikipedia.org/wiki/Panopticon" class="absolute inset-0 w-full h-full border-none" />
 
 <!--
 - Designed by Jeremy Bentham in 1791 — a circular prison where a single guard can observe all inmates without them knowing if they're being watched
@@ -320,9 +335,12 @@ title: WhatIsTracking.Me
 
 ---
 
-<div class="absolute inset-0 flex items-center justify-center p-6" style="background: #ffffff">
-  <img src="/images/panoptacon.png" class="max-w-full max-h-full object-contain" />
-  <a href="https://www.irishlegal.com/articles/uk-home-secretary-dreams-of-ai-powered-panopticon" target="_blank" class="absolute bottom-4 right-4 text-sm text-black/60 !no-underline !border-none" style="text-decoration: none !important; pointer-events: auto">irishlegal.com/articles/uk-home-secretary-dreams-of-ai-powered-panopticon</a>
+<div class="absolute inset-0 flex items-center justify-center p-28" style="background: #ffffff">
+  <div class="grid grid-cols-2 gap-4 w-full h-full">
+    <img src="/images/pan0.png" class="w-full h-full object-contain" />
+    <img src="/images/pan1.png" class="w-full h-full object-contain" />
+  </div>
+  <a href="https://www.irishlegal.com/articles/uk-home-secretary-dreams-of-ai-powered-panopticon" target="_blank" class="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm text-black/60 whitespace-nowrap !no-underline !border-none" style="text-decoration: none !important; pointer-events: auto">irishlegal.com/articles/uk-home-secretary-dreams-of-ai-powered-panopticon</a>
 </div>
 
 <!--
@@ -334,7 +352,7 @@ title: WhatIsTracking.Me
 
 ---
 
-<SlideImage overlay="Mapping the Tracking" subtitle="What we found wearing QR codes in public" :images="[
+<SlideImage overlay="Mapping the Tracking" :images="[
   '/images/generated_2026-02-18T00-48-05_abstract_heatmap_visualization_showing_dense_clust.png',
 ]" />
 
