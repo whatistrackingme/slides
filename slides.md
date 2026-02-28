@@ -299,7 +299,6 @@ title: WhatIsTracking.Me
   'NFC & Bluetooth beacon support',
   { text: 'Fingerprinting', highlight: true },
   'Timescale filtering on dashboard',
-  'Reverse geocoding for location history',
   'Internationalization (i18n)',
   'GeoIP country-code on interactions',
   'Location heatmaps over time',
@@ -311,6 +310,7 @@ title: WhatIsTracking.Me
   'E2E encryption for interactions',
   'Energy saver mode',
   'Backlight e-ink display for night mode',
+  'Research QR reading optics',
 ]" />
 
 ---
