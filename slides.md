@@ -71,11 +71,9 @@ title: WhatIsTracking.Me
 ]" />
 
 <!--
-- You just shared your IP address, device type, and browser
-- Your approximate location was captured via geocoding
+- You shared IP address, device type, browser, and approximate location
 - A timestamp was recorded to the millisecond
-- All from a single, casual scan
-- That simple scan just created data you can't see, control, or get back
+- Data you can't see, control, or get back
 -->
 
 ---
@@ -88,7 +86,6 @@ title: WhatIsTracking.Me
 - Device fingerprint: OS, screen size, language, timezone
 - Network fingerprint: IP, carrier, connection type
 - Behavioral fingerprint: scan time, frequency, location patterns
-- Combined: a unique profile from passive interactions
 -->
 
 ---
@@ -101,7 +98,6 @@ title: WhatIsTracking.Me
 - Every scan turns your presence into data
 - Your face, your location, your habits — encoded and tracked
 - In the digital world, you are already a QR code
-- More on this later
 -->
 
 ---
@@ -133,8 +129,7 @@ title: WhatIsTracking.Me
 ]" />
 
 <!--
-- What if you could flip the script on tracking?
-- Wear a QR code badge in public
+- Flip the script: wear a QR code badge in public
 - Every scan triggers a notification to your phone
 - You become the observer of your own surveillance
 -->
@@ -144,12 +139,8 @@ title: WhatIsTracking.Me
 <SlideHowItWorks />
 
 <!--
-- Wear a QR code linked to your encrypted identity
-- When someone scans it, you get a real-time notification
-- Review who scanned you, when, and where — on your device
-- QR code encodes an encrypted public key — not a URL
-- Scanner hits the API, triggering a push notification
-- Scan metadata is encrypted — only your device can read it
+- QR encodes encrypted public key, not a URL
+- Scan metadata encrypted — only your device can read it
 - No accounts, no sign-ups, no third-party tracking
 -->
 
@@ -164,8 +155,7 @@ title: WhatIsTracking.Me
 
 <!--
 - Four-phase zero-knowledge pipeline
-- Server never sees plaintext — only ciphertext passes through
-- Push notification carries encrypted payload, not raw data
+- Server never sees plaintext — only ciphertext
 - Decryption is exclusively client-side
 -->
 
@@ -193,9 +183,7 @@ title: WhatIsTracking.Me
 <!--
 - Live maps showing real scan data from four cities
 - Walked around with a phone displaying a QR code
-- Practical concern: a phone screen is small and hard to scan
-- Tested at conferences, cafes, and on public transit
-- Transition into the e-ink solution
+- Problem: phone screens are small and hard to scan
 -->
 
 ---
@@ -205,12 +193,9 @@ title: WhatIsTracking.Me
 ]" />
 
 <!--
-- Low battery — runs for weeks on a single charge
-- Set it and forget it — always-on display
-- Bigger and more readable than a phone screen
-- E-ink solves the phone screen problem
-- Inkplate hardware: affordable, open source, Arduino-compatible
-- Always visible, no need to keep a phone out
+- Runs for weeks on a single charge
+- Always-on, bigger, more readable than a phone
+- Inkplate: affordable, open source, Arduino-compatible
 -->
 
 ---
@@ -233,11 +218,8 @@ title: WhatIsTracking.Me
 
 <!--
 - E-ink displays are not waterproof
-- Solution: a 3D-printed weatherproof case
-- Protects the display while keeping the QR code scannable
-- Outdoor use means weather exposure
-- 3D-printed case design is open source
-- Transition into the full hardware ecosystem
+- 3D-printed weatherproof case, open source design
+- Protects display while keeping QR scannable
 -->
 
 ---
@@ -326,17 +308,15 @@ title: WhatIsTracking.Me
 <iframe src="https://en.wikipedia.org/wiki/Panopticon" class="absolute inset-0 w-full h-full border-none" />
 
 <!--
-- Designed by Jeremy Bentham in 1791 — a circular prison where a single guard can observe all inmates without them knowing if they're being watched
-- The power comes not from constant surveillance, but from the possibility of it — inmates self-regulate their behaviour
-- Michel Foucault used it as a metaphor for modern disciplinary societies
-- The internet is the ultimate panopticon — we are always potentially observed, and we change our behaviour accordingly
-- WhatIsTracking.Me flips this: instead of being the watched, you become the watcher
+- Designed by Jeremy Bentham (British philosopher) in 1791 — a prison where inmates self-regulate because they might be watched
+- The internet and surveillance capitalism are its modern culmination
+- Of course, this is a conspiracy theory that only the paranoid believe...
 -->
 
 ---
 
 <div class="absolute inset-0 flex items-center justify-center p-28" style="background: #ffffff">
-  <div class="grid grid-cols-2 gap-4 w-full h-full">
+  <div class="grid grid-cols-2 gap-16 w-full h-full">
     <img src="/images/pan0.png" class="w-full h-full object-contain" />
     <img src="/images/pan1.png" class="w-full h-full object-contain" />
   </div>
@@ -344,10 +324,9 @@ title: WhatIsTracking.Me
 </div>
 
 <!--
-- UK Home Secretary openly described her vision of an AI-powered panopticon — constant state surveillance using technology
-- This isn't science fiction — governments are actively pursuing total surveillance
-- Source: irishlegal.com/articles/uk-home-secretary-dreams-of-ai-powered-panopticon
-- TODO: fix this slide — replace with a better newspaper clipping or screenshot
+- UK Home Secretary openly described her vision of an AI-powered panopticon
+- This isn't science fiction — governments are actively pursuing it
+- TODO: replace with better newspaper clipping
 -->
 
 ---
@@ -357,7 +336,6 @@ title: WhatIsTracking.Me
 ]" />
 
 <!--
-- Worn at conferences, cafes, and public transit
 - Scans detected from systems we did not expect
 - QR codes readable from surprising distances
 - Automated scanners outnumbered human scanners
@@ -377,18 +355,35 @@ title: WhatIsTracking.Me
 
 <!--
 - Privacy is about choice, not secrecy
-- One path: open, transparent, user-controlled
-- Other path: surveillance, control, no consent
-- WhatIsTracking.Me gives you the power to choose
-- Nothing to hide, nothing to fear — sign off
-- Research novel insights from real-world tracking data
-- Getting a dataset to influence regulations and learn from real data
-- To see if your images have gone viral online
-- To see how different jurisdictions and businesses respect your privacy
-- Understanding the technologies tracking people and the insights they reveal
-- We are not against AI or technology — we want to understand it
-- Some have concerns, and those concerns deserve data
-- Raising awareness is a core objective — does anyone still care?
+- Information asymmetry: they know everything, you know nothing
+- WITM flips the script — you become the observer
+-->
+
+---
+
+<div class="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-4 p-4" style="background: var(--witm-base)">
+  <a href="https://www.bbc.com/news/articles/c62rexy9y3no" target="_blank" class="relative rounded-3xl overflow-hidden !no-underline !border-none">
+    <img src="/images/generated_2026-02-28T04-35-52_dark_moody_hotel_room_interior_with_a_small_hidden_camera_le.png" class="w-full h-full object-cover" />
+    <span class="absolute top-2 left-1/2 -translate-x-1/2 bg-black/70 text-lg font-bold px-3 py-1.5 rounded" style="color: #a6e3a1">Detect Spy Cameras</span>
+  </a>
+  <div class="relative rounded-3xl overflow-hidden">
+    <img src="/images/generated_2026-02-28T04-36-32_social_media_viral_spread_visualization_glowing_network_of.png" class="w-full h-full object-cover" />
+    <span class="absolute top-2 left-1/2 -translate-x-1/2 bg-black/70 text-lg font-bold px-3 py-1.5 rounded" style="color: #a6e3a1">Track Viral Spread</span>
+  </div>
+  <div class="relative rounded-3xl overflow-hidden">
+    <img src="/images/generated_2026-02-28T04-37-00_corporate_building_facade_with_visible_security_cameras_and.png" class="w-full h-full object-cover" />
+    <span class="absolute top-2 left-1/2 -translate-x-1/2 bg-black/70 text-lg font-bold px-3 py-1.5 rounded" style="color: #a6e3a1">Audit Businesses</span>
+  </div>
+  <div class="relative rounded-3xl overflow-hidden">
+    <img src="/images/generated_2026-02-28T04-37-23_research_laboratory_with_holographic_data_visualizations_sho.png" class="w-full h-full object-cover" />
+    <span class="absolute top-2 left-1/2 -translate-x-1/2 bg-black/70 text-lg font-bold px-3 py-1.5 rounded" style="color: #a6e3a1">Research & Policy</span>
+  </div>
+</div>
+
+<!--
+- Four concrete use cases — each solves a real problem
+- Spy cameras: BBC exposed 180+ hotel cameras in China
+- Personal safety to academic research
 -->
 
 ---
@@ -404,16 +399,12 @@ title: WhatIsTracking.Me
 ---
 
 <SlideColumns title="Discussion Questions" :items="[
-  'Should passive scanning require consent?',
-  'Why do we lock doors but not data?',
-  'Can self-surveillance change how we think about privacy?',
+  'If you have nothing to hide, why do you close the bathroom door?',
+  'Would you accept a stranger following you and taking notes?',
+  'Why do we lock doors but leave our data wide open?',
+  'Who profits from the data you generate just by existing?',
+  'Should someone own a photo of you walking in public?',
   'Is privacy about secrecy — or about choice?',
-  'What would you learn from wearing a QR code for a week?',
-  'Should physical spaces have the same consent models as cookies?',
-  'How do we make tracking visible without normalizing it?',
-  'What role should open source play in privacy tools?',
-  'Can the law keep up with technology?',
-  'Should someone own a photo of you walking around in public?',
 ]" />
 
 <!--
