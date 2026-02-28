@@ -232,12 +232,11 @@ title: WhatIsTracking.Me
 ---
 
 <SlideSTLViewer
-  model="/models/teapot.stl"
-  :wireframe="true"
+  model="/models/witm_case.stl"
 />
 
 <div class="absolute top-8 left-0 right-0 text-center z-10">
-  <h2 class="text-2xl font-bold" style="color: var(--witm-text); font-family: var(--witm-font-display)">Bespoke ASA & TPU Hopefully Waterproof Megacase</h2>
+  <h2 class="text-2xl font-bold" style="color: var(--witm-text); font-family: var(--witm-font-display)">Bespoke <span style="color: #a6e3a1">ASA</span> & <span style="color: #fab387">TPU</span> Hopefully Waterproof Megacase</h2>
 </div>
 
 <!--

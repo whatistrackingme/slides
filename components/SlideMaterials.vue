@@ -14,10 +14,13 @@
           />
           <!-- Text content -->
           <div class="flex flex-col min-w-0 flex-1">
-            <p class="material-name text-3xl font-bold uppercase tracking-wider leading-none !mb-0 !pb-0">
+            <p
+              class="material-name text-3xl font-bold uppercase tracking-wider leading-none !mb-0 !pb-0"
+              :style="mat.nameColor ? { color: mat.nameColor } : {}"
+            >
               {{ mat.name }}
             </p>
-            <p class="material-full-name text-sm !mt-0 mb-3">{{ mat.fullName }}</p>
+            <p class="material-full-name text-sm !mt-0 mb-3" :style="mat.nameColor ? { color: mat.nameColor } : {}">{{ mat.fullName }}</p>
             <div class="space-y-0.5 text-sm">
               <div v-for="prop in mat.props" :key="prop.label" class="flex justify-between gap-2">
                 <span class="prop-label whitespace-nowrap">{{ prop.label }}</span>
@@ -45,6 +48,7 @@ interface Material {
   fullName: string
   smiles: string
   props: MaterialProp[]
+  nameColor?: string
 }
 
 const materials: Material[] = [
@@ -72,6 +76,7 @@ const materials: Material[] = [
   },
   {
     name: 'ASA',
+    nameColor: '#a6e3a1',
     fullName: 'Acrylonitrile Styrene Acrylate',
     smiles: 'C=Cc1ccccc1',
     props: [
@@ -83,13 +88,14 @@ const materials: Material[] = [
   },
   {
     name: 'TPU',
+    nameColor: '#fab387',
     fullName: 'Thermoplastic Polyurethane',
     smiles: 'O=C=Nc1ccc(Cc2ccc(N=C=O)cc2)cc1',
     props: [
       { label: 'Print temp', value: '220-250 °C' },
       { label: 'UV resist.', value: 'Good' },
       { label: 'Flexibility', value: 'Very flexible' },
-      { label: 'Best for', value: 'Wristbands & clips' },
+      { label: 'Best for', value: 'Gaskets & gripping' },
     ],
   },
 ]
