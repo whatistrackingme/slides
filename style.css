@@ -104,3 +104,32 @@
 .slidev-layout .shiki {
   background: transparent !important;
 }
+
+/* ── iframe print placeholder (redacted) ── */
+.iframe-witm {
+  position: relative;
+}
+
+.iframe-witm-placeholder {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background: black;
+  color: white;
+  font-family: var(--witm-font-display);
+  font-size: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+@media print {
+  .iframe-witm iframe {
+    display: none !important;
+  }
+
+  .iframe-witm-placeholder {
+    display: flex !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

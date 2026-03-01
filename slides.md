@@ -56,7 +56,10 @@ title: WhatIsTracking.Me
 
 ---
 
-<iframe src="https://app.staging.whatistracking.me/qr" class="absolute inset-0 w-full h-full border-none" allow="camera" />
+<div class="absolute inset-0 iframe-witm">
+  <iframe src="https://app.staging.whatistracking.me/qr" class="w-full h-full border-none" allow="camera" />
+  <div class="iframe-witm-placeholder">[ redacted screenshot ]</div>
+</div>
 
 <!--
 - Open your phone camera or QR scanner
@@ -102,11 +105,13 @@ title: WhatIsTracking.Me
 
 ---
 
-<a href="https://app.staging.whatistracking.me/scans" target="_blank" class="absolute top-4 right-4 z-10 text-white !no-underline !border-none" style="pointer-events: auto; text-decoration: none !important;">
-  <carbon-launch class="text-lg" />
-</a>
-
-<iframe src="https://app.staging.whatistracking.me/scans" class="absolute inset-0 w-full h-full border-none" />
+<div class="absolute inset-0 iframe-witm">
+  <a href="https://app.staging.whatistracking.me/scans" target="_blank" class="absolute top-4 right-4 z-10 text-white !no-underline !border-none" style="pointer-events: auto; text-decoration: none !important;">
+    <carbon-launch class="text-lg" />
+  </a>
+  <iframe src="https://app.staging.whatistracking.me/scans" class="w-full h-full border-none" />
+  <div class="iframe-witm-placeholder">[ redacted screenshot ]</div>
+</div>
 
 <!--
 - The QR code you scanned earlier? I can see every scan.
@@ -269,8 +274,8 @@ title: WhatIsTracking.Me
 
 ---
 
-<div class="absolute inset-0 flex items-center justify-center" style="background: var(--witm-base)">
-  <p class="text-3xl opacity-30" style="font-family: var(--witm-font-display)">[ insert photo of case here ]</p>
+<div class="absolute inset-0">
+  <img src="/images/qr_walking.jpg" class="w-full h-full object-cover" />
 </div>
 
 ---
@@ -343,8 +348,8 @@ title: WhatIsTracking.Me
 
 ---
 
-<div class="absolute inset-0 flex items-center justify-center" style="background: var(--witm-base)">
-  <p class="text-3xl opacity-30" style="font-family: var(--witm-font-display)">[ insert real captures here ]</p>
+<div class="absolute inset-0">
+  <iframe src="https://app.staging.whatistracking.me/map?loc=34.6988%2C135.4934%2C34.7063%2C135.4974&fullscreen=1" class="w-full h-full border-none" />
 </div>
 
 ---
