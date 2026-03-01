@@ -3,7 +3,7 @@
     <!-- Radial glow -->
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1 h-1 rounded-full pointer-events-none animate-pulse hero-glow" />
     <!-- Logo watermark -->
-    <img src="/images/logo-witm.svg" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none object-contain hero-watermark" />
+    <img :src="logoSrc" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none object-contain hero-watermark" />
     <!-- Grid pattern -->
     <div class="absolute inset-0 pointer-events-none hero-grid" />
     <!-- Content -->
@@ -25,6 +25,9 @@
 </template>
 
 <script setup lang="ts">
+const base = import.meta.env.BASE_URL
+const logoSrc = `${base}images/logo-witm.svg`
+
 defineProps<{
   title: string
   subtitle?: string

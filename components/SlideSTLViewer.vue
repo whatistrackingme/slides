@@ -36,6 +36,10 @@ const props = withDefaults(defineProps<{
   overlayColor: '#fab387',
 })
 
+const base = import.meta.env.BASE_URL
+const withBase = (path: string) =>
+  base !== '/' && path.startsWith('/') ? base + path.slice(1) : path
+
 const canvas = ref<HTMLCanvasElement | null>(null)
 const loading = ref(true)
 
@@ -169,7 +173,7 @@ function initScene(el: HTMLCanvasElement) {
   scene.add(modelGroup)
 
   loader.load(
-    props.model,
+    withBase(props.model),
     (geometry) => {
       geometry.computeVertexNormals()
 

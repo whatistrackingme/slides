@@ -100,9 +100,16 @@ const hasSlot = computed(() => !!slots.default)
 
 const selected = ref<number | null>(null)
 
+const base = import.meta.env.BASE_URL
+
+const withBase = (path: string) =>
+  base !== '/' && path.startsWith('/') ? base + path.slice(1) : path
+
 const normalizedImages = computed<NormalizedImage[]>(() =>
   props.images.map(img =>
-    typeof img === 'string' ? { src: img } : img
+    typeof img === 'string'
+      ? { src: withBase(img) }
+      : { ...img, src: withBase(img.src) }
   )
 )
 

@@ -254,7 +254,7 @@ title: WhatIsTracking.Me
 ---
 
 <div class="absolute inset-0 flex items-center justify-center p-6" style="background: #54545a">
-  <img src="/images/slicer_screenshot.png" class="max-h-full max-w-full object-contain" />
+  <img :src="`${$base}images/slicer_screenshot.png`" class="max-h-full max-w-full object-contain" />
 </div>
 
 <!--
@@ -265,7 +265,7 @@ title: WhatIsTracking.Me
 ---
 
 <div class="absolute inset-0" style="background: var(--witm-base)">
-  <img src="/images/printing.jpg" class="w-full h-full object-cover" />
+  <img :src="`${$base}images/printing.jpg`" class="w-full h-full object-cover" />
 </div>
 
 <!--
@@ -275,7 +275,7 @@ title: WhatIsTracking.Me
 ---
 
 <div class="absolute inset-0">
-  <img src="/images/qr_walking.jpg" class="w-full h-full object-cover" />
+  <img :src="`${$base}images/qr_walking.jpg`" class="w-full h-full object-cover" />
 </div>
 
 ---
@@ -322,8 +322,8 @@ title: WhatIsTracking.Me
 
 <div class="absolute inset-0 flex items-center justify-center p-28" style="background: #ffffff">
   <div class="grid grid-cols-2 gap-16 w-full h-full">
-    <img src="/images/pan0.png" class="w-full h-full object-contain" />
-    <img src="/images/pan1.png" class="w-full h-full object-contain" />
+    <img :src="`${$base}images/pan0.png`" class="w-full h-full object-contain" />
+    <img :src="`${$base}images/pan1.png`" class="w-full h-full object-contain" />
   </div>
   <a href="https://www.irishlegal.com/articles/uk-home-secretary-dreams-of-ai-powered-panopticon" target="_blank" class="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm text-black/60 whitespace-nowrap !no-underline !border-none" style="text-decoration: none !important; pointer-events: auto">irishlegal.com/articles/uk-home-secretary-dreams-of-ai-powered-panopticon</a>
 </div>
@@ -368,19 +368,19 @@ title: WhatIsTracking.Me
 
 <div class="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-4 p-4" style="background: var(--witm-base)">
   <a href="https://www.bbc.com/news/articles/c62rexy9y3no" target="_blank" class="relative rounded-3xl overflow-hidden !no-underline !border-none">
-    <img src="/images/generated_2026-02-28T04-35-52_dark_moody_hotel_room_interior_with_a_small_hidden_camera_le.png" class="w-full h-full object-cover" />
+    <img :src="`${$base}images/generated_2026-02-28T04-35-52_dark_moody_hotel_room_interior_with_a_small_hidden_camera_le.png`" class="w-full h-full object-cover" />
     <span class="absolute top-2 left-1/2 -translate-x-1/2 bg-black/70 text-lg font-bold px-3 py-1.5 rounded" style="color: #a6e3a1">Detect Spy Cameras</span>
   </a>
   <div class="relative rounded-3xl overflow-hidden">
-    <img src="/images/generated_2026-02-28T04-36-32_social_media_viral_spread_visualization_glowing_network_of.png" class="w-full h-full object-cover" />
+    <img :src="`${$base}images/generated_2026-02-28T04-36-32_social_media_viral_spread_visualization_glowing_network_of.png`" class="w-full h-full object-cover" />
     <span class="absolute top-2 left-1/2 -translate-x-1/2 bg-black/70 text-lg font-bold px-3 py-1.5 rounded" style="color: #a6e3a1">Track Viral Spread</span>
   </div>
   <div class="relative rounded-3xl overflow-hidden">
-    <img src="/images/generated_2026-02-28T04-37-00_corporate_building_facade_with_visible_security_cameras_and.png" class="w-full h-full object-cover" />
+    <img :src="`${$base}images/generated_2026-02-28T04-37-00_corporate_building_facade_with_visible_security_cameras_and.png`" class="w-full h-full object-cover" />
     <span class="absolute top-2 left-1/2 -translate-x-1/2 bg-black/70 text-lg font-bold px-3 py-1.5 rounded" style="color: #a6e3a1">Audit Businesses</span>
   </div>
   <div class="relative rounded-3xl overflow-hidden">
-    <img src="/images/generated_2026-02-28T04-37-23_research_laboratory_with_holographic_data_visualizations_sho.png" class="w-full h-full object-cover" />
+    <img :src="`${$base}images/generated_2026-02-28T04-37-23_research_laboratory_with_holographic_data_visualizations_sho.png`" class="w-full h-full object-cover" />
     <span class="absolute top-2 left-1/2 -translate-x-1/2 bg-black/70 text-lg font-bold px-3 py-1.5 rounded" style="color: #a6e3a1">Research & Policy</span>
   </div>
 </div>

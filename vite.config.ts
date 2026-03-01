@@ -9,7 +9,6 @@ export default defineConfig(({ mode }) => {
     .filter(Boolean)
 
   return {
-    base: process.env.GITHUB_ACTIONS ? '/slides/' : '/',
     plugins: [
       {
         name: 'slidev-hmr-fix',
